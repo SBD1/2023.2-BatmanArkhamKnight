@@ -22,3 +22,10 @@ Nossa equipe de trabalho é composta pelos estudantes de Engenharia de Software 
 <div style="text-align: left">
 <p> Tabela 1: Equipe de trabalho (Fonte: autor, 2023).</p>
 </div>
+
+### Histórico de versões
+
+| Versão |    Data    | Descrição                                      | Autor                                               | Revisão                                             |
+| :----: | :--------: | ---------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `1.0`  | 25/09/2023 | Organização do README do projeto               | [Luis Miranda](https://github.com/LuisMiranda10)  | [Milena Baruc](https://github.com/MilenaBaruc) |
+                                                     |
