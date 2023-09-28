@@ -28,4 +28,3 @@ Nossa equipe de trabalho é composta pelos estudantes de Engenharia de Software 
 | Versão |    Data    | Descrição                                      | Autor                                               | Revisão                                             |
 | :----: | :--------: | ---------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
 | `1.0`  | 25/09/2023 | Organização do README do projeto               | [Luis Miranda](https://github.com/LuisMiranda10)  | [Milena Baruc](https://github.com/MilenaBaruc) |
-                                                     |
