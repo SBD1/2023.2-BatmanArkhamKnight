@@ -5,10 +5,9 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 
 ## Modelo Relacional
 
+![image](https://github.com/SBD1/2023.2-BatmanArkhamKnight/blob/main/Images/MER_Batman.jpg)
 
 <font size="3">
 <p style="text-align: center">Imagem 1: Modelo Relacional Batman Arkham Knight.</p>
 <p style="text-align: center">Fonte: Autores.</p>
 </font>
-
-## Tabelas
