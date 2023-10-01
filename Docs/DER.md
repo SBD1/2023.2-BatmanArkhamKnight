@@ -22,6 +22,10 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 
 - *Descrição:* Superfície terrestre que apresenta características naturais e específicas.
 
+### Viagem
+
+- *Descrição:* Viagem que o PC faz entre regiões para se locomover de maneira mais rápida.
+
 ### Local
 
 - *Descrição:* Lugar específico em uma determinada área geográfica.
@@ -54,6 +58,10 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 
 - *Descrição:*  Itens, dispositivos ou armaduras específicas usados pelo PC para utilizar em combates ou outras situações. 
 
+### Pre requisito
+
+- *Descrição:* pré requisitos e requisitos que uma missão pode ser para liberar alguma outra na qual o PC precisa para continuar a história. 
+
 ## Relacionamentos
 
 ### Gotham x Região
@@ -63,6 +71,10 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 ### Região x Local
 
 - *Relacionamentos:* Região contém locais específicos.
+
+### Região x Viagem
+
+- *Relacionamentos:* Viagem é feita entre regiões para uma locomoção mais rápida.
 
 ### Local x NPC
 
@@ -91,3 +103,7 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 ### PC x Equipamento
 
 - *Relacionamentos:* PC possui equipamento; existem diferentes equipamentos;
+
+### Missão x Pre requisito
+
+- *Descrição:* Missão possui pré requisitos para outra missão; é pré requisito para outra missão; PC que completa essas missões.
