@@ -5,6 +5,8 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 
 ## DER - Batman Arkham Knight
 
+![image](https://github.com/SBD1/2023.2-BatmanArkhamKnight/blob/main/Images/DER_Batman.jpg)
+
 <font size="3">
 <p style="text-align: center">Imagem 1: Diagrama Entidade Relacionamento Batman Arkham Knight.</p>
 <p style="text-align: center">Fonte: Autores.</p>
