@@ -10,6 +10,46 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 <p style="text-align: center">Fonte: Autores.</p>
 </font>
 
-## Entidades e Atributos
+## Entidades 
+
+### Gotham
+
+- *Descrição:* Localidade onde se encontra tudo o que acontece dentro do jogo.
+
+### Região
+
+- *Descrição:* Superfície terrestre que apresenta características naturais e específicas.
+
+### Local
+
+- *Descrição:* Lugar específico em uma determinada área geográfica.
+
+### NPC
+
+- *Descrição:* Personagem dentro do jogo que não é controlado por um player. 
+
+### Vilão
+
+- *Descrição:* Personagem que atua como um adversário/inimigo do protagonista.
+
+### Instância
+
+- *Descrição:* Representa um "Personagem Não Jogável" (NPC) específico dentro do jogo.
+
+### PC
+
+- *Descrição:* personagem dentro do jogo que é controlado e manipulado diretamente pelo player.
+
+### Missão
+
+- *Descrição:* Uma tarefa ou objetivo específico designado dentro do jogo para que o PC complete.
+
+### Veículo
+
+- *Descrição:* Um meio de transporte utilizado pelo PC dentro do jogo para se locomover. 
+
+### Equipamento
+
+- *Descrição:*  Itens, dispositivos ou armaduras específicas usados pelo PC para utilizar em combates ou outras situações. 
 
 ## Relacionamentos
