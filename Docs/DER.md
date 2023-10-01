@@ -53,3 +53,39 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 - *Descrição:*  Itens, dispositivos ou armaduras específicas usados pelo PC para utilizar em combates ou outras situações. 
 
 ## Relacionamentos
+
+### Gotham x Região
+
+- *Relacionamentos:* Gotham possui regiões, onde dentro dessas regiões é possível fazer viagens para uma locomoção mais rápida pelo mapa.
+
+### Região x Local
+
+- *Relacionamentos:* Região contém locais específicos.
+
+### Local x NPC
+
+- *Relacionamentos:* Local abriga NPCs; possui as coordenadas de NPCs; está em uma região.
+
+### NPC x Vilão
+
+- *Relacionamentos:* NPC é/pode ser um vilão; tem inteligência e força.
+
+### NPC x Instância
+
+- *Relacionamentos:* NPC possui instância; possui nivél de dificuldade.
+
+### Local x PC
+
+- *Relacionamentos:* Local abriga PC; possui as coordenadas de PC; está em uma região.
+
+### PC x Missão
+
+- *Relacionamentos:* PC possui missão; ocorre em Gotham.
+
+### PC x Veículo
+
+- *Relacionamentos:* PC possui veículo; ocorre em Gotham; Se locomove dentro de Gotham.
+
+### PC x Equipamento
+
+- *Relacionamentos:* PC possui equipamento; existem diferentes equipamentos;
