@@ -107,3 +107,10 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 ### Missão x Pre requisito
 
 - *Descrição:* Missão possui pré requisitos para outra missão; é pré requisito para outra missão; PC que completa essas missões.
+
+## Histórico de versões
+
+| Versão |    Data    | Descrição                                           | Autor                                          |
+| :----: | :--------: | --------------------------                          | ---------------------------------------------- |
+| `1.0`  | 25/09/2023 | Criação do DER                                      | Todos  |
+| `1.1`  | 01/10/2023 | Revisão                                             | Todos  |
