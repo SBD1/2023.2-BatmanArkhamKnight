@@ -2,9 +2,9 @@
 
 ## Entidade: Gotham
 
-#### Descrição: 
+### Descrição: Armanezará a informação de Gotham
 
-#### Observação: Essa tabela não possui chave estrangeira.
+### Observação: Essa tabela não possui chave estrangeira
 
 | Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
 | :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
@@ -12,9 +12,9 @@
 
 ## Entidade: Região
 
-### Descrição: Armanezará a informação de Regiões			
+### Descrição: Armanezará a informação de Regiões
 
-### Observação: Essa tabela possui uma chave estrangeira da tabela Gotham			
+### Observação: Essa tabela possui uma chave estrangeira da tabela Gotham
 
 | Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
 | :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
@@ -22,9 +22,18 @@
 |    gotham_atual  | Chave estrangeira referenciando o código identificador de gotham|       Int      |     4   |    FK             |
 |    regiao_nome  | nome da Região|       VarChar      |     20   |    Not Null             |
 
+## Entidade: Viaja
+
+### Descrição: Armanezará a informação das viajens entre regiões
+
+| Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
+| :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
+| regiao_origem |         Região de origem da viagem          | Int       | 4 | FK |
+| regiao_destino |         Região de destino da viagem          | Int       | 4 | FK |
+
 ## Entidade: Local
 
-### Descrição: Armanezará a informação dos Locais, ou quadrantes			
+### Descrição: Armanezará a informação dos Locais, ou quadrantes
 
 ### Observação: Essa tabela possui uma chave estrangeira da tabela Gotham
 
@@ -35,27 +44,18 @@
 | coordenada_x |         Coordernada x para identificar onde estão os NPCs e PC          | Int       | 4 | Not Null |
 | coordenada_y |         Coordernada y para identificar onde estão os NPCs e PC          | Int       | 4 | Not Null |
 
-## Entidade: Viaja
+## Entidade: PC
 
-### Descrição: Armanezará a informação das viajens entre regiões			
+### Descrição: Armanezará as informações do Presonagem Jogável
 
-### Observação: 
-
-| Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
-| :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
-| regiao_origem |         Região de origem da viagem          | Int       | 4 | FK |
-| regiao_destino |         Região de destino da viagem          | Int       | 4 | FK |
-
-## Entidade: Pré-requisito
-
-### Descrição: Armanezará a informação de pré-requisito das missões		
-
-### Observação: Essa tabela possui duas chaves estrangeiras da tabela missão
+### Observação: Essa tabela possui uma chave estrangeira da tabela Local
 
 | Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
 | :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
-| requisito_id |         Chave estrangeira referenciando o código identificador de quando é requisito          | Int       | 4 | FK |
-| possui_pre_req_id |         Chave estrangeira referenciando o código identificador de quando possui pré requisito          | Int       | 4 | FK |
+| personagem_id |         Código identificador do personagem      | Int       | 4 | PK |
+| local_id |         Chave estrangeira referenciando o código identificador de local        | Int       | 4 | FK |
+| nome |          Nome do personagem jogavél         | VarChar       | 20 | Not Null |
+| HP |          Pontos de vida do personagem jogável         | Int       | 4 | Default |
 
 ## Entidade: NPC
 
@@ -80,7 +80,7 @@
 | :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
 | inst_id |         Código identificador da instância        | Int       | 4 | PK |
 | NPC_id |         Chave estrangeira referenciando o código identificador de NPC         | Int       | 4 | FK |
-| nivel_dificuldade |          Nível de dificuldade da instância         | VarChar       | 20 | Default |
+| nivel_dificuldade |          Nível de dificuldade da instância         | Int       | 4 | Default |
 
 ## Entidade: Vilão
 
@@ -96,42 +96,43 @@
 | inteligencia |          Quantidade de inteligência do personagem         | Int       | 4 | Default |
 | forca |          Quantidade de força do personagem         | Int       | 4 | Default |
 
+## Entidade: Equipamento
+
+### Descrição: Armanezará as informações de Equipamento
+
+### Observação: Essa tabela não possui chaves estrangeiras
+
+| Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
+| :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
+| equip_id |         Código identificador do equipamento     | Int       | 4 | PK |
+| tipo_equipamento |         tipo de equipamento que o PC está usando        | VarChar       | 20 | Not Null |
+| nome_equipamento |          nome do equipamento         | VarChar       | 20 | Not Null |
+| nivel |          nível de quanto esta aprimorado o equipamento         | Int       | 4 | Not Null/Check |
+| descricao |          Descrição do equipamento         | VarChar       | 55 | Not Null |
+
 ## Entidade: Armadura
 
-### Descrição: Armanezará as informações de armadura			
+### Descrição: Armanezará as informações de armadura
 
-### Observação: Essa tabela possui uma chave estrangeira da tabela equipamento			
+### Observação: Essa tabela possui uma chave estrangeira da tabela equipamento
 
 | Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
 | :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
 | armadura_id |         Código identificador de armadura      | Int       | 4 | PK |
 | equip_id |         Chave estrangeira referenciando o código identificador de NPC         | Int       | 4 | FK |
-| protecao |          Quantidade de proteção         | int       | 4 | Not Null/Check |
+| protecao |          Quantidade de proteção         | int       | 20 | Not Null/Check |
 
 ## Entidade: Arma
 
 ### Descrição: Armanezará as informações de arma
 
-### Observação: Essa tabela possui uma chave estrangeira da tabela equipamento			
+### Observação: Essa tabela possui uma chave estrangeira da tabela equipamento
 
 | Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
 | :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
 | arma_id |         Código identificador de armadura      | Int       | 4 | PK |
 | equip_id |         Chave estrangeira referenciando o código identificador de NPC         | Int       | 4 | FK |
-| dano |          Quantidade de dano         | int       | 4 | Not Null/Check |
-
-## Entidade: PC
-
-### Descrição: Armanezará as informações do Presonagem Jogável
-
-### Observação: Essa tabela possui uma chave estrangeira da tabela Local
-
-| Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
-| :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
-| personagem_id |         Código identificador do personagem      | Int       | 4 | PK |
-| local_id |         Chave estrangeira referenciando o código identificador de local        | Int       | 4 | FK |
-| nome |          Nome do personagem jogavél         | VarChar       | 20 | Not Null |
-| HP |          Pontos de vida do personagem jogável         | Int       | 4 | Default |
+| dano |          Quantidade de dano         | int       | 20 | Not Null/Check |
 
 ## Entidade: ER PC x Equipamento
 
@@ -144,21 +145,6 @@
 | personagem_id |         Chave estrangeira referenciando o código identificador do personagem      | Int       | 4 | FK |
 | equip_id |         Chave estrangeira referenciando o código identificador de equipamento        | VarChar       | 20 | FK |
 | level |          Level necessário para desbloquear equipamento         | int       | 4 | Not Null |
-| HP |          Pontos de vida do personagem jogável         | Int       | 4 | Default |
-
-## Entidade: Equipamento
-
-### Descrição: Armanezará as informações de Equipamento
-
-### Observação: Essa tabela não possui chaves estrangeiras
-
-| Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
-| :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
-| equip_id |         Código identificador do equipamento     | Int       | 4 | FK |
-| tipo_equipamento |         tipo de equipamento que o PC está usando        | VarChar       | 20 | Not Null |
-| nome_equipamento |          nome do equipamento         | VarChar       | 20 | Not Null |
-| nivel |          nível de quanto esta aprimorado o equipamento         | Int       | 4 | Not Null/Check |
-| descricao |          Descrição do equipamento         | VarChar       | 55 | Not Null |
 
 ## Entidade: Missão
 
@@ -173,6 +159,17 @@
 | nome_missao |          nome da missão         | VarChar       | 20 | Not Null |
 | descricao |          Descrição da missão         | VarChar       | 55 | Not Null |
 | situacao |          situção da missão         | Int       | 4 | Not Null/Check |
+
+## Entidade: Pré-requisito
+
+### Descrição: Armanezará a informação de pré-requisito das missões
+
+### Observação: Essa tabela possui duas chaves estrangeiras da tabela missão
+
+| Nome Variável |         Descrição          | Tipo de dado       | Tamanho | Restrições de Domínio |
+| :-----------: | :------------------------: | :----------------: | :------:| ----------------- |
+| requisito_id |         Chave estrangeira referenciando o código identificador quando é requisito          | Int       | 4 | FK |
+| possui_pre_req_id |         Chave estrangeira referenciando o código identificador quando possui pré requisito          | Int       | 4 | FK |
 
 ## Entidade: Veículo
 
@@ -226,3 +223,4 @@
 | :----: | :--------: | ----------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | `1.0`  | 28/09/2023 | Criação do documento DD | Todos                                                                  |
 | `1.3`  | 01/10/2023 | Revisão geral         |  [João Pedro](https://github.com/JoosPerro)     |
+
