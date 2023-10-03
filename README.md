@@ -23,8 +23,12 @@ Nossa equipe de trabalho é composta pelos estudantes de Engenharia de Software 
 <p> Tabela 1: Equipe de trabalho (Fonte: autor, 2023).</p>
 </div>
 
+## Apresentações
+- [Módulo 1](https://youtu.be/HRS933FJc_I)
+
 ### Histórico de versões
 
 | Versão |    Data    | Descrição                                      | Autor                                               | Revisão                                             |
 | :----: | :--------: | ---------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
 | `1.0`  | 25/09/2023 | Organização do README do projeto               | [Luis Miranda](https://github.com/LuisMiranda10)  | [Milena Baruc](https://github.com/MilenaBaruc) |
+| `1.1`  | 02/10/2023 | Adicionando apresentação 1 | [Milena Baruc](https://github.com/MilenaBaruc)  | [Luis Miranda](https://github.com/LuisMiranda10) |
