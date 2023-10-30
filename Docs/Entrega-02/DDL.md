@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS public.Missao(
     personagem_id integer NOT NULL,
     nome_missao character varying(20) COLLATE pg_catalog."default" NOT NULL,
     descricao character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    situacao integer NOT NULL,
+    situacao character varying(20) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT missao_pk PRIMARY KEY (missao_id),
     CONSTRAINT missao_fk FOREIGN KEY (personagem_id)
         REFERENCES public.pc (personagem_id) MATCH SIMPLE
