@@ -16,6 +16,8 @@ Nossa equipe de trabalho é composta pelos estudantes de Engenharia de Software 
     <td align="center"><a href="https://github.com/MilenaBaruc"><img style="border-radius: 50%;" src="https://github.com/MilenaBaruc.png" width="100px;" alt=""/><br /><sub><b>Milena Baruc</b></sub></a><br />
     <td align="center"><a href="https://github.com/JoosPerro"><img style="border-radius: 50%;" src="https://github.com/JoosPerro.png" width="100px;" alt=""/><br /><sub><b>João Pedro</b></sub></a><br /><a href="Link git" title="Rocketseat"></a></td>
     <td align="center"><a href="https://github.com/LuisMiranda10"><img style="border-radius: 50%;" src="https://github.com/LuisMiranda10.png" width="100px;" alt=""/><br /><sub><b>Luis Miranda</b></sub></a><br /><a href="Link git" title="Rocketseat"></a></td>
+    <td align="center"><a href="https://github.com/NickGehjk"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/108106812?v=4" width="100px;" alt=""/><br /><sub><b>Nicolas Bomfim</b></sub></a><br />
+    <td align="center"><a href="https://github.com/MateusPy"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/98001933?s=400&u=960f90db65022ae3b93ddda74dc0b1d451dedac0&v=4" width="100px;" alt=""/><br /><sub><b>Mateus Orlando</b></sub></a><br />
   </tr>
 </table>
 
@@ -32,3 +34,4 @@ Nossa equipe de trabalho é composta pelos estudantes de Engenharia de Software 
 | :----: | :--------: | ---------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
 | `1.0`  | 25/09/2023 | Organização do README do projeto               | [Luis Miranda](https://github.com/LuisMiranda10)  | [Milena Baruc](https://github.com/MilenaBaruc) |
 | `1.1`  | 02/10/2023 | Adicionando apresentação 1 | [Milena Baruc](https://github.com/MilenaBaruc)  | [Luis Miranda](https://github.com/LuisMiranda10) |
+| `1.2`  | 30/10/2023 | Adicionando Novos Membros | [Mateus Orlando](https://github.com/MateusPy)  | [Nicolas Bomfim](https://github.com/NickGehjk) |
