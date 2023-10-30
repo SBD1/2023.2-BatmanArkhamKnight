@@ -147,11 +147,10 @@ CREATE TABLE IF NOT EXISTS public.Equipamento(
     nome_equipamento character varying(20) COLLATE pg_catalog."default" NOT NULL,
     nivel integer NOT NULL,
     descricao character varying(55) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT equip_pk PRIMARY KEY (equip_id),
+    CONSTRAINT equip_pk PRIMARY KEY (equip_id)
 );
 
-CREATE TABLE IF NOT EXISTS public.Pcequip
-(
+CREATE TABLE IF NOT EXISTS public.Pcequip(
     personagem_id integer NOT NULL,
     equip_id integer NOT NULL,
     level integer NOT NULL,
@@ -159,7 +158,7 @@ CREATE TABLE IF NOT EXISTS public.Pcequip
         REFERENCES public.equipamento (equip_id) MATCH SIMPLE,
     CONSTRAINT pcquipper_fk FOREIGN KEY (personagem_id)
         REFERENCES public.pc (personagem_id) MATCH SIMPLE
-)
+);
 
 CREATE TABLE IF NOT EXISTS public.Armadura(
     armadura_id integer NOT NULL,
@@ -178,4 +177,5 @@ CREATE TABLE IF NOT EXISTS public.Arma(
     CONSTRAINT equip_arma_fk FOREIGN KEY (equip_id)
         REFERENCES public.equipamento(equip_id) MATCH SIMPLE
 );
+
 ```
