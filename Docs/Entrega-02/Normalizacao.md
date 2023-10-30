@@ -11,7 +11,7 @@ A normalização em bancos de dados é um processo essencial para organizar dado
 
 - 4ª Forma Normal (4FN): A 4FN vai além das formas normais anteriores, focando na decomposição de multi-valorados e dependências multi-valoradas. Ela lida com situações em que um conjunto de dados pode ter múltiplas dependências entre subconjuntos dos atributos, garantindo uma estrutura ainda mais refinada e minimizando a redundância.
 
-- Forma Normal de Boyce-Codd (FNBC): A Forma Normal de Boyce-Codd é uma forma mais forte que a 3FN e, em muitos casos, é considerada idêntica à 3FN. Ela se concentra em eliminar anomalias associadas a dependências funcionais e preserva a integridade do banco de dados.
+- Forma Normal de Boyce-Codd (FNBC): A Forma Normal de Boyce-Codd se concentra em eliminar anomalias associadas a dependências funcionais e preserva a integridade do banco de dados.
 
 ### Tabela Gotham - Normalização feita até a 3ª Forma Normal (3NF)
 
