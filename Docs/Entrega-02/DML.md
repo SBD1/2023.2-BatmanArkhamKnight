@@ -172,4 +172,4 @@ VALUES
 
 | Versão |    Data    | Descrição                | Autor                                                                                                                 |
 | :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| `1.0`  | 29/10/2023 | Criação do documento DML | [Milena Baruc](https://github.com/MilenaBaruc)                                                                        |
+| `1.0`  | 29/10/2023 | Criação do documento DML | [Mateus Orlando](https://github.com/MateusPy)                                                                         |
