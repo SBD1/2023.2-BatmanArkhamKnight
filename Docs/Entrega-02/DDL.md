@@ -179,3 +179,9 @@ CREATE TABLE IF NOT EXISTS public.Arma(
 );
 
 ```
+
+## Histórico de versões
+
+| Versão |    Data    | Descrição                | Autor                                                                                                                 |
+| :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 29/10/2023 | Criação do documento DDL | [Nicolas Bomfim](https://github.com/NickGehjk)                                                                        |
