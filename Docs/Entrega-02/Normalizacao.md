@@ -182,3 +182,9 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 **3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+## Histórico de versões
+
+| Versão |    Data    | Descrição                | Autor                                                                                                                 |
+| :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 29/10/2023 | Criação do documento de Normalização |  [Luis Miranda](https://github.com/LuisMiranda10)    |
