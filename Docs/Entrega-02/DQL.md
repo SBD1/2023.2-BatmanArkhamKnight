@@ -87,3 +87,9 @@ JOIN Regiao r ON l.regiao_atual = r.regiao_id
 WHERE l.local_id = 1;
 
 ```
+
+## Histórico de versões
+
+| Versão |    Data    | Descrição                | Autor                                                                                                                 |
+| :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 29/10/2023 | Criação do documento DQL | [Milena Baruc](https://github.com/MilenaBaruc)                                                                        |
