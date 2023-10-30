@@ -1,4 +1,17 @@
-## Normalização - Batman Arkham Knight
+# Normalização - Batman Arkham Knight
+
+## Introdução
+A normalização em bancos de dados é um processo essencial para organizar dados de maneira eficiente, reduzindo a redundância e mantendo a consistência. As formas normais são etapas ou níveis desse processo de normalização, cada uma trazendo requisitos específicos para a organização dos dados, entre elas temos: 
+
+- 1ª Forma Normal (1FN): A 1FN exige que cada coluna em uma tabela contenha valores atômicos e não repetidos. Isso significa que cada célula na tabela deve conter um único valor, não sendo possível ter múltiplos valores separados por vírgula, por exemplo. Isso ajuda a eliminar a repetição de dados.
+
+- 2ª Forma Normal (2FN): Na 2FN, a tabela precisa atender aos requisitos da 1FN e, adicionalmente, todos os campos não-chave devem depender completamente da chave primária. Isso significa que os campos que não são chaves devem ser dependentes da chave primária, evitando dependências parciais.
+
+- 3ª Forma Normal (3FN): A 3FN estabelece que uma tabela deve estar na 2FN e, além disso, não pode ter dependências transitivas. Isso significa que os campos que não são chave não devem depender uns dos outros. Se um campo depende de outro que, por sua vez, depende da chave primária, é necessária uma reformulação para remover essa dependência transitiva.
+
+- 4ª Forma Normal (4FN): A 4FN vai além das formas normais anteriores, focando na decomposição de multi-valorados e dependências multi-valoradas. Ela lida com situações em que um conjunto de dados pode ter múltiplas dependências entre subconjuntos dos atributos, garantindo uma estrutura ainda mais refinada e minimizando a redundância.
+
+- Forma Normal de Boyce-Codd (FNBC): A Forma Normal de Boyce-Codd é uma forma mais forte que a 3FN e, em muitos casos, é considerada idêntica à 3FN. Ela se concentra em eliminar anomalias associadas a dependências funcionais e preserva a integridade do banco de dados.
 
 ### Tabela Gotham - Normalização feita até a 3ª Forma Normal (3NF)
 
