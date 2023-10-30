@@ -1,10 +1,3 @@
-# Data Definition Language
-
-## Introdução
-DDL ( Data Definition Language ) são os comandos que interagem com os objetos do banco.
-Abaixo segue a criação das tables com código SQL para o jogo do Batman Arkham Knight:  
-  
-'''
 CREATE TABLE IF NOT EXISTS public.Gotham(
     gotham_id integer NOT NULL,
     CONSTRAINT gotham_pkey PRIMARY KEY (gotham_id)
@@ -199,4 +192,3 @@ CREATE TABLE IF NOT EXISTS public.Arma(
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 );
-'''
