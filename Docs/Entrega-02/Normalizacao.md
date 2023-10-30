@@ -35,7 +35,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 ### Tabela Viaja - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "****"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN.
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -95,7 +95,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 ### Tabela Pre requisito - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "****"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN.
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
