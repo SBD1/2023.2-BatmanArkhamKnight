@@ -4,7 +4,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -12,7 +12,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -20,7 +20,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -28,7 +28,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -36,7 +36,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -44,7 +44,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -52,7 +52,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -60,7 +60,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -68,7 +68,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -76,7 +76,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -84,7 +84,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -92,7 +92,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -100,7 +100,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -108,7 +108,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -116,7 +116,7 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
 
@@ -124,6 +124,6 @@
 
 **1ª Forma Normal (1NF):**
 
-**2ª Forma Normal (2NF):**
+**2ª Forma Normal (2NF):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2NF não se aplica a esta tabela.
 
 **3ª Forma Normal (3NF):**
