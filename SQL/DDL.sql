@@ -11,8 +11,6 @@ CREATE TABLE IF NOT EXISTS public.Regiao(
     CONSTRAINT regiao_pk PRIMARY KEY (regiao_id),
     CONSTRAINT reg_fk FOREIGN KEY (gotham_atual)
         REFERENCES public.gotham (gotham_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS public.Viagem(
@@ -22,8 +20,6 @@ CREATE TABLE IF NOT EXISTS public.Viagem(
         REFERENCES public.regiao (regiao_id) MATCH SIMPLE,
     CONSTRAINT viagemdestino_fk FOREIGN KEY (viagem_destino)
         REFERENCES public.regiao (regiao_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS public.Local(
@@ -34,8 +30,6 @@ CREATE TABLE IF NOT EXISTS public.Local(
     CONSTRAINT local_pk PRIMARY KEY (local_id),
     CONSTRAINT local_fk FOREIGN KEY (regiao_atual)
         REFERENCES public.regiao (regiao_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 
@@ -47,8 +41,6 @@ CREATE TABLE IF NOT EXISTS public.Pc(
     CONSTRAINT pc_pk PRIMARY KEY (personagem_id),
     CONSTRAINT pc_fk FOREIGN KEY (local_id)
         REFERENCES public.local (local_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 
@@ -60,8 +52,6 @@ CREATE TABLE IF NOT EXISTS public.Npc(
     CONSTRAINT npc_pk PRIMARY KEY (npc_id),
     CONSTRAINT npc_fk FOREIGN KEY (local_id)
         REFERENCES public.local (local_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 
@@ -72,8 +62,6 @@ CREATE TABLE IF NOT EXISTS public.Instancia(
     CONSTRAINT instancia_pk PRIMARY KEY (instancia_id),
     CONSTRAINT instancia_fk FOREIGN KEY (npc_id)
         REFERENCES public.npc (npc_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 
@@ -86,8 +74,6 @@ CREATE TABLE IF NOT EXISTS public.Vilao(
     CONSTRAINT vilao_pk PRIMARY KEY (vilao_id),
     CONSTRAINT vilao_fk FOREIGN KEY (npc_id)
         REFERENCES public.npc (npc_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 	
 
@@ -100,8 +86,6 @@ CREATE TABLE IF NOT EXISTS public.Missao(
     CONSTRAINT missao_pk PRIMARY KEY (missao_id),
     CONSTRAINT missao_fk FOREIGN KEY (personagem_id)
         REFERENCES public.pc (personagem_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS public.Prerequisito(
@@ -111,8 +95,6 @@ CREATE TABLE IF NOT EXISTS public.Prerequisito(
         REFERENCES public.missao (missao_id) MATCH SIMPLE,
     CONSTRAINT viagemdestino_fk FOREIGN KEY (possuiPreReq)
         REFERENCES public.missao (missao_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS public.Veiculo(
@@ -123,8 +105,6 @@ CREATE TABLE IF NOT EXISTS public.Veiculo(
     CONSTRAINT veiculo_pk PRIMARY KEY (veiculo_id),
     CONSTRAINT veiculo_fk FOREIGN KEY (personagem_id)
         REFERENCES public.pc (personagem_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 
@@ -134,8 +114,6 @@ CREATE TABLE IF NOT EXISTS public.Terrestre(
     CONSTRAINT veicterrestre_pk PRIMARY KEY (veicterrestre_id),
     CONSTRAINT veicterrestre_fk FOREIGN KEY (veiculo_id)
         REFERENCES public.veiculo (veiculo_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 
@@ -145,8 +123,6 @@ CREATE TABLE IF NOT EXISTS public.Aquatico(
     CONSTRAINT veicaquatico_pk PRIMARY KEY (veicaquatico_id),
     CONSTRAINT veicaquatico_fk FOREIGN KEY (veiculo_id)
         REFERENCES public.veiculo (veiculo_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 
@@ -156,8 +132,6 @@ CREATE TABLE IF NOT EXISTS public.Aereo(
     CONSTRAINT veicaereo_pk PRIMARY KEY (veicaereo_id),
     CONSTRAINT veicaereo_fk FOREIGN KEY (veiculo_id)
         REFERENCES public.veiculo (veiculo_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS public.Equipamento(
@@ -167,9 +141,18 @@ CREATE TABLE IF NOT EXISTS public.Equipamento(
     nivel integer NOT NULL,
     descricao character varying(55) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT equip_pk PRIMARY KEY (equip_id),
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
+
+CREATE TABLE IF NOT EXISTS public.Pcequip
+(
+    personagem_id integer NOT NULL,
+    equip_id integer NOT NULL,
+    level integer NOT NULL,
+    CONSTRAINT pcequipequi_fk FOREIGN KEY (equip_id)
+        REFERENCES public.equipamento (equip_id) MATCH SIMPLE,
+    CONSTRAINT pcquipper_fk FOREIGN KEY (personagem_id)
+        REFERENCES public.pc (personagem_id) MATCH SIMPLE
+)
 
 CREATE TABLE IF NOT EXISTS public.Armadura(
     armadura_id integer NOT NULL,
@@ -178,8 +161,6 @@ CREATE TABLE IF NOT EXISTS public.Armadura(
     CONSTRAINT armadura_pk PRIMARY KEY (armadura_id),
     CONSTRAINT equip_fk FOREIGN KEY (equip_id)
         REFERENCES public.equipamento(equip_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS public.Arma(
@@ -189,6 +170,4 @@ CREATE TABLE IF NOT EXISTS public.Arma(
     CONSTRAINT arma_pk PRIMARY KEY (armadura_id),
     CONSTRAINT equip_arma_fk FOREIGN KEY (equip_id)
         REFERENCES public.equipamento(equip_id) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
 );
