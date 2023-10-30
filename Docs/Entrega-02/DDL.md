@@ -184,4 +184,4 @@ CREATE TABLE IF NOT EXISTS public.Arma(
 
 | Versão |    Data    | Descrição                | Autor                                                                                                                 |
 | :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| `1.0`  | 29/10/2023 | Criação do documento DDL | [Nicolas Bomfim](https://github.com/NickGehjk)                                                                        |
+| `1.0`  | 29/10/2023 | Criação do documento DDL | [Nicolas Bomfim](https://github.com/NickGehjk) e  [Luis Miranda](https://github.com/LuisMiranda10)                                                                       |
