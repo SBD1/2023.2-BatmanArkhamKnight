@@ -48,3 +48,8 @@ Regiões visitadas
 ```
 π(r.regiao_nome)σ(l.local_id = 1 AND l.regiao_atual = r.regiao_id)(ρ(l)Local X ρ(r)Regiao)
 ```
+## Histórico de versões
+
+| Versão |    Data    | Descrição                | Autor                                                                                                                 |
+| :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 30/10/2023 | Criação do documento de Álgebra Relacional | [João Pedro](https://github.com/JoosPerro)                                                                      |
