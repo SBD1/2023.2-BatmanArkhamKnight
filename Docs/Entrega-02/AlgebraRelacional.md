@@ -2,7 +2,7 @@
 
 A álgebra relacional é a teoria por trás das consultas SQL. Baseada na teoria de conjuntos, ela é aplicada utilizando operadores, a fim de consultar os campos e tuplas de tabelas desejadas.
 
-## Expressôes de consulta
+## Expressões de consulta
 
 Informações do Personagem Jogável
 ```
