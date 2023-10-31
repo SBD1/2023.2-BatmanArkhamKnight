@@ -17,14 +17,14 @@ Mas, caso precise, segue um exemplo de como seria feito:
 UPDATE:
 
 ```
-UPDATE public.pc
+UPDATE public.Pc
 SET nome = 'Novo Nome'
 WHERE personagem_id = 1;
 ```
 DELETE:
 
 ```
-DELETE FROM public.missao
+DELETE FROM public.Missao
 WHERE missao_id = 2;
 ```
 ## DML do projeto:
