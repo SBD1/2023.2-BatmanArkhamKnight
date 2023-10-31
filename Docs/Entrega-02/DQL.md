@@ -47,7 +47,7 @@ FROM Vilao v
 WHERE v.npc_id IN (
     SELECT i.npc_id
     FROM Instancia i
-    WHERE i.nivel_dificuldade = 'Derrotado' AND i.npc_id = v.npc_id
+    WHERE i.npc_id = v.npc_id
 ) AND v.npc_id IN (
     SELECT npc_id
     FROM Npc
