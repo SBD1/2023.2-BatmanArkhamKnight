@@ -12,6 +12,13 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 <p style="text-align: center">Fonte: Autores.</p>
 </font>
 
+![image](https://github.com/SBD1/2023.2-BatmanArkhamKnight/assets/125216584/5da8de8b-e419-445c-969b-80e91fb3af6d)
+<font size="3">
+<p style="text-align: center">Imagem 2: Segunda versão do Diagrama Entidade Relacionamento Batman Arkham Knight.</p>
+<p style="text-align: center">Fonte: https://github.com/JoosPerro.</p>
+</font>
+
+
 ## Entidades 
 
 ### Gotham
@@ -114,3 +121,4 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 | :----: | :--------: | --------------------------                          | ---------------------------------------------- |
 | `1.0`  | 25/09/2023 | Criação do DER                                      | Todos  |
 | `1.1`  | 01/10/2023 | Revisão                                             | Todos  |
+| `2.0`  | 01/12/2023 | Segunda versão                                      | João Pedro (https://github.com/JoosPerro)      |
