@@ -18,8 +18,7 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 <p style="text-align: center">Fonte: https://github.com/JoosPerro.</p>
 </font>
 
-
-## Entidades 
+## Entidades
 
 ### Gotham
 

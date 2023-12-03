@@ -12,9 +12,17 @@ disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.
 <p style="text-align: center">Fonte: Autores.</p>
 </font>
 
+![image](https://github.com/SBD1/2023.2-BatmanArkhamKnight/blob/main/Images/DER.att_Batman.jpg)
+
+<font size="3">
+<p style="text-align: center">Imagem 2: Modelo Relacional Atualizado Batman Arkham Knight.</p>
+<p style="text-align: center">Fonte: Autores.</p>
+</font>
+
 ## Histórico de versões
 
 | Versão |    Data    | Descrição                                           | Autor                                          |
 | :----: | :--------: | --------------------------                          | ---------------------------------------------- |
 | `1.0`  | 25/09/2023 | Criação do MER                                      | Todos  |
 | `1.1`  | 01/10/2023 | Revisão                                   | [Luis Miranda](https://github.com/LuisMiranda10)  |
+| `1.2`  | 03/12/2023 | Atualização                                   | [Milena Baruc](https://github.com/MilenaBaruc)  |

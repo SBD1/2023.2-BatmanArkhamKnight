@@ -1,9 +1,3 @@
-CREATE TABLE IF NOT EXISTS public.Gotham(
-    gotham_id integer NOT NULL,
-    CONSTRAINT gotham_pkey PRIMARY KEY (gotham_id)
-);
-
-
 CREATE TABLE IF NOT EXISTS public.Regiao(
     regiao_id integer NOT NULL,
     regiao_nome character varying(20) COLLATE pg_catalog."default" NOT NULL,
