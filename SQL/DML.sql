@@ -1,5 +1,5 @@
 -- Gotham
-INSERT INTO public.Gotham (gotham_id)
+INSERT INTO public.Mapa (gotham_id)
 VALUES
     (1),
     (2),
