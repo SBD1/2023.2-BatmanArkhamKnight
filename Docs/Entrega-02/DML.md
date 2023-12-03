@@ -1,3 +1,37 @@
+# Data Manipulation Language- DML
+
+## Conceito
+
+DML, ou Liguagem de Manipulação de Dados, é um subconjunto da linguagem SQL que é usado para manipular dados em um banco de dados relacional. O DML fornece três comandos básicos para manipular dados:
+
+- INSERT: Insere uma nova linha em uma tabela.
+
+- UPDATE: Atualiza os valores de uma ou mais colunas em uma linha existente.
+
+- DELETE: Exclui uma linha de uma tabela.
+
+O presente documento possui apenas os INSERT's para as respectivas tabelas do banco, pois ainda não há necessidade de deletar ou atualizar algo nas tabelas.
+
+Mas, caso precise, segue um exemplo de como seria feito:
+
+UPDATE:
+
+```
+UPDATE public.Pc
+SET nome = 'Novo Nome'
+WHERE personagem_id = 1;
+```
+DELETE:
+
+```
+DELETE FROM public.Missao
+WHERE missao_id = 2;
+```
+## DML do projeto:
+
+A seguir, estão exemplos fictícios de como será feita as inserções nas tabelas do projeto da disciplina.
+
+```
 -- Gotham
 INSERT INTO public.Gotham (gotham_id)
 VALUES
@@ -132,56 +166,10 @@ VALUES
     (2, 2, 15),
     (3, 1, 25);
 
+```
 
+## Histórico de versões
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Versão |    Data    | Descrição                | Autor                                                                                                                 |
+| :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 29/10/2023 | Criação do documento DML | [Mateus Orlando](https://github.com/MateusPy)                                                                         |

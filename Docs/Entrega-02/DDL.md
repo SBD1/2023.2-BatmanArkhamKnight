@@ -173,9 +173,15 @@ CREATE TABLE IF NOT EXISTS public.Arma(
     arma_id integer NOT NULL,
     equip_id integer NOT NULL,
     dano integer NOT NULL,
-    CONSTRAINT arma_pk PRIMARY KEY (armadura_id),
+    CONSTRAINT arma_pk PRIMARY KEY (arma_id),
     CONSTRAINT equip_arma_fk FOREIGN KEY (equip_id)
         REFERENCES public.equipamento(equip_id) MATCH SIMPLE
 );
 
 ```
+
+## Histórico de versões
+
+| Versão |    Data    | Descrição                | Autor                                                                                                                 |
+| :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `1.0`  | 29/10/2023 | Criação do documento DDL | [Nicolas Bomfim](https://github.com/NickGehjk) e  [Luis Miranda](https://github.com/LuisMiranda10)                                                                       |
