@@ -12,7 +12,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Trigger para realizar um combate entre um jogador e um inimigo
+-- Procedure para realizar um combate entre um jogador e um inimigo
 
 CREATE OR REPLACE FUNCTION realizar_combate() RETURNS TRIGGER AS $$
 BEGIN
@@ -41,10 +41,59 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Trigger que dispara o combate após a inserção de uma nova linha na tabela de combate
+
+
 CREATE TRIGGER combate_trigger
 AFTER INSERT ON combate
 FOR EACH ROW
 EXECUTE FUNCTION realizar_combate();
+--Procedure para realizar uma melhoria no equipamento
+
+CREATE OR REPLACE FUNCTION realizar_melhoria(
+    IN p_pc_id INTEGER,
+    IN p_equip_id INTEGER
+) RETURNS VOID AS $$
+BEGIN
+    -- Verifica se o PC possui o equipamento
+    IF (SELECT COUNT(*) FROM pc_equipa WHERE PC_id = p_pc_id AND equip_id = p_equip_id) > 0 THEN
+        -- Obtém o preço da melhoria do equipamento
+        DECLARE melhoria_preco INTEGER;
+        SELECT preco INTO melhoria_preco FROM Equipamento WHERE id = p_equip_id;
+
+        -- Verifica se o PC possui recursos suficientes para a melhoria
+        IF (SELECT HP FROM PC WHERE person_id = p_pc_id) >= melhoria_preco THEN
+            -- Atualiza o HP do PC após a melhoria
+            UPDATE PC SET HP = HP - melhoria_preco WHERE person_id = p_pc_id;
+
+            -- Realiza a melhoria no equipamento (pode adicionar lógica específica aqui)
+            UPDATE pc_equipa SET preco = preco + melhoria_preco WHERE PC_id = p_pc_id AND equip_id = p_equip_id;
+
+            RAISE NOTICE 'Equipamento aprimorado com sucesso.';
+        ELSE
+            RAISE EXCEPTION 'Recursos insuficientes para realizar a melhoria.';
+        END IF;
+    ELSE
+        RAISE EXCEPTION 'Equipamento não encontrado no inventário do personagem.';
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+--Trigger para realizar uma melhoria no equipamento
+
+CREATE OR REPLACE FUNCTION realizar_melhoria_trigger() RETURNS TRIGGER AS $$
+BEGIN
+    -- Chama o procedimento de melhoria ao inserir uma nova linha na tabela de melhoria
+    PERFORM realizar_melhoria(NEW.PC_id, NEW.equip_id);
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Trigger que dispara a melhoria após a inserção de uma nova linha na tabela de melhoria
+CREATE TRIGGER melhoria_trigger
+AFTER INSERT ON pc_melhora_equip
+FOR EACH ROW
+EXECUTE FUNCTION realizar_melhoria_trigger();
 
 
 -- Trigger para evitar duplicações no nome do Mapa
