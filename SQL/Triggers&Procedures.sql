@@ -1,4 +1,4 @@
--- Trigger para realizar a compra de um equipamento por um jogador
+-- Trigger para realizar a compra de um equipamento para um jogador
 
 CREATE OR REPLACE FUNCTION compra_equipamento(
     pc_id INT,
