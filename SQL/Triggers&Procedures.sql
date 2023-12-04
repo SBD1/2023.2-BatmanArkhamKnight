@@ -3,18 +3,10 @@
 CREATE OR REPLACE FUNCTION compra_equipamento(
     pc_id INT,
     equipamento_id INT,
-    valor INT
 ) RETURNS VOID AS $$
-DECLARE
-    valor_total INT;
 BEGIN
-    SELECT (equip_preco)
-    INTO equip_preco
-    FROM Equipamento
-    WHERE id = equipamento_id;
-
-        INSERT INTO Equipamento (nome, descr, preco)
-        VALUES (pc_id, equipamento_id, valor)
+        INSERT INTO public.pc_equipa (PC_id, equip_id) 
+        VALUES (p_pc_id, p_equip_id);
 
         RAISE NOTICE 'Compra realizada com sucesso!';
     ELSE
@@ -22,6 +14,7 @@ BEGIN
     END IF;
 END;
 $$ LANGUAGE plpgsql;
+
 
 -- Trigger para evitar duplicações no nome do Mapa
 CREATE OR REPLACE FUNCTION evita_duplicacao_mapa()
