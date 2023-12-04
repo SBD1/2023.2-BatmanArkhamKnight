@@ -1,8 +1,8 @@
 -- Trigger para realizar a compra de um equipamento para um jogador
 
 CREATE OR REPLACE FUNCTION compra_equipamento(
-    pc_id INT,
-    equipamento_id INT,
+    p_pc_id INT,
+    p_equip_id INT,
 ) RETURNS VOID AS $$
 BEGIN
         INSERT INTO public.pc_equipa (PC_id, equip_id) 
