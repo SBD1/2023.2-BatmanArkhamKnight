@@ -86,19 +86,19 @@ CREATE TABLE IF NOT EXISTS public.PC(
     descr VARCHAR(514) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS public.Objetivo(
-    id SERIAL PRIMARY KEY,
-    local_id INTEGER REFERENCES public.Local (id),
-    missao_id INTEGER REFERENCES public.Missao (id),
-    status INTEGER NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS public.Missao(
     id SERIAL PRIMARY KEY,
     nome CHAR(32) NOT NULL,
     descr VARCHAR(256) NOT NULL,
     pontos INTEGER NOT NULL,
     NPC_id INTEGER REFERENCES public.NPC (person_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.Objetivo(
+    id SERIAL PRIMARY KEY,
+    local_id INTEGER REFERENCES public.Local (id),
+    missao_id INTEGER REFERENCES public.Missao (id),
+    status INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS public.Dialogo(
