@@ -14,6 +14,7 @@ $$ LANGUAGE plpgsql;
 
 -- Procedure para realizar um combate entre um jogador e um inimigo
 
+
 CREATE OR REPLACE FUNCTION realizar_combate() RETURNS TRIGGER AS $$
 BEGIN
     -- Verifica se o PC e o Inimigo existem e estão vivos
@@ -42,12 +43,13 @@ $$ LANGUAGE plpgsql;
 
 -- Trigger que dispara o combate após a inserção de uma nova linha na tabela de combate
 
-
 CREATE TRIGGER combate_trigger
 AFTER INSERT ON combate
 FOR EACH ROW
 EXECUTE FUNCTION realizar_combate();
+
 --Procedure para realizar uma melhoria no equipamento
+
 
 CREATE OR REPLACE FUNCTION realizar_melhoria(
     IN p_pc_id INTEGER,
@@ -78,7 +80,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
---Trigger para realizar uma melhoria no equipamento
+--TRIGGER para realizar uma melhoria no equipamento
 
 CREATE OR REPLACE FUNCTION realizar_melhoria_trigger() RETURNS TRIGGER AS $$
 BEGIN
@@ -90,6 +92,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Trigger que dispara a melhoria após a inserção de uma nova linha na tabela de melhoria
+
 CREATE TRIGGER melhoria_trigger
 AFTER INSERT ON pc_melhora_equip
 FOR EACH ROW
