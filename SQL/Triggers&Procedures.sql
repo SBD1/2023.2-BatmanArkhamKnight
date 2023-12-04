@@ -86,3 +86,44 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+--Trigger para Garantir Consistência de Dados:
+CREATE OR REPLACE FUNCTION valida_tipo_personagem()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF (NEW.tipo = 1 AND NOT EXISTS (SELECT 1 FROM public.NPC WHERE person_id = NEW.id)) OR
+       (NEW.tipo = 2 AND NOT EXISTS (SELECT 1 FROM public.PC WHERE person_id = NEW.id)) THEN
+        RAISE EXCEPTION 'O tipo de Personagem não corresponde às tabelas de especialização (NPC ou PC)';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_valida_tipo_personagem
+BEFORE INSERT OR UPDATE ON public.Personagem
+FOR EACH ROW EXECUTE FUNCTION valida_tipo_personagem();
+
+--Stored Procedure para Inserir um Novo Personagem:
+
+CREATE OR REPLACE FUNCTION insere_personagem(
+    p_tipo INTEGER
+    -- adicione outros parâmetros conforme necessário
+)
+RETURNS INTEGER AS $$
+DECLARE
+    person_id INTEGER;
+BEGIN
+    -- Inserir na tabela Personagem
+    INSERT INTO public.Personagem (tipo) VALUES (p_tipo) RETURNING id INTO person_id;
+
+    -- Verificar o tipo e inserir na tabela de especialização correspondente
+    IF p_tipo = 1 THEN
+        INSERT INTO public.NPC (person_id, nome, HP, ATK, DEF, Descr, NPC_foco)
+        VALUES (person_id, 'Nome NPC', 100, 10, 10, 'Descrição NPC', 1);
+    ELSIF p_tipo = 2 THEN
+        INSERT INTO public.PC (person_id, NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, quadra_id, veic_id, descr)
+        VALUES (person_id, NULL, 100, 10, 10, 0, 5, 2, 1, 1, 'Descrição PC');
+    END IF;
+
+    RETURN person_id;
+END;
+$$ LANGUAGE plpgsql;
