@@ -5,3 +5,6 @@ class Veiculo:
         self.HP = HP
         self.VEL = VEL
         self.nome = nome
+
+    def __str__(self):
+        return f"Veiculo[id={self.id}, local_id={self.local_id}, HP={self.HP}, VEL={self.VEL}, nome={self.nome}]"   

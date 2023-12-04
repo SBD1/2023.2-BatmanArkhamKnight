@@ -5,3 +5,6 @@ class Local:
         self.acesso = acesso
         self.origem_x = origem_x
         self.origem_y = origem_y
+
+    def __str__(self):
+        return f"Local[id={self.id}, regiao_id={self.regiao_id}, acesso={self.acesso}, origem_x={self.origem_x}, origem_y={self.origem_y}]"
