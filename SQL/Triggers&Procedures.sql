@@ -12,6 +12,40 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+-- Trigger para realizar um combate entre um jogador e um inimigo
+
+CREATE OR REPLACE FUNCTION realizar_combate() RETURNS TRIGGER AS $$
+BEGIN
+    -- Verifica se o PC e o Inimigo existem e estão vivos
+    IF (
+        (SELECT COUNT(*) FROM PC WHERE person_id = NEW.PC_id AND HP > 0) > 0 AND
+        (SELECT COUNT(*) FROM NPC WHERE person_id = NEW.NPC_id AND HP > 0) > 0
+    ) THEN
+        -- Lógica do combate (exemplo: subtrair ATK do atacante do HP do alvo)
+        UPDATE PC SET HP = HP - (SELECT ATK FROM NPC WHERE person_id = NEW.NPC_id) WHERE person_id = NEW.PC_id;
+        UPDATE NPC SET HP = HP - (SELECT ATK FROM PC WHERE person_id = NEW.PC_id) WHERE person_id = NEW.NPC_id;
+
+        -- Verifica se algum dos combatentes ficou incapacitado
+        IF (SELECT HP FROM PC WHERE person_id = NEW.PC_id) <= 0 THEN
+            RAISE NOTICE 'O PC foi derrotado.';
+        END IF;
+        IF (SELECT HP FROM NPC WHERE person_id = NEW.NPC_id) <= 0 THEN
+            RAISE NOTICE 'O Inimigo foi derrotado.';
+        END IF;
+    ELSE
+        RAISE EXCEPTION 'Personagem ou Inimigo não encontrado ou incapacitado.';
+    END IF;
+
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Trigger que dispara o combate após a inserção de uma nova linha na tabela de combate
+CREATE TRIGGER combate_trigger
+AFTER INSERT ON combate
+FOR EACH ROW
+EXECUTE FUNCTION realizar_combate();
+
 
 -- Trigger para evitar duplicações no nome do Mapa
 CREATE OR REPLACE FUNCTION evita_duplicacao_mapa()
