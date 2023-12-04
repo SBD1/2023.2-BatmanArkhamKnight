@@ -9,9 +9,6 @@ BEGIN
         VALUES (p_pc_id, p_equip_id);
 
         RAISE NOTICE 'Compra realizada com sucesso!';
-    ELSE
-        RAISE EXCEPTION 'Não foi possível realizar a compra!';
-    END IF;
 END;
 $$ LANGUAGE plpgsql;
 
