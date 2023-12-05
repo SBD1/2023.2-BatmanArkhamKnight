@@ -42,7 +42,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Trigger que dispara o combate após a inserção de uma nova linha na tabela de combate
-
 CREATE TRIGGER combate_trigger
 AFTER INSERT ON combate
 FOR EACH ROW
@@ -80,8 +79,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
---TRIGGER para realizar uma melhoria no equipamento
-
+--Trigger para realizar uma melhoria no equipamento
 CREATE OR REPLACE FUNCTION realizar_melhoria_trigger() RETURNS TRIGGER AS $$
 BEGIN
     -- Chama o procedimento de melhoria ao inserir uma nova linha na tabela de melhoria
@@ -92,12 +90,58 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Trigger que dispara a melhoria após a inserção de uma nova linha na tabela de melhoria
-
 CREATE TRIGGER melhoria_trigger
 AFTER INSERT ON pc_melhora_equip
 FOR EACH ROW
 EXECUTE FUNCTION realizar_melhoria_trigger();
 
+--PROCEDURE para melhoria na habilidade
+
+
+CREATE OR REPLACE FUNCTION realizar_melhoria_habilidade(
+    IN p_person_id INTEGER,
+    IN p_hab_id INTEGER
+) RETURNS VOID AS $$
+BEGIN
+    -- Verifica se o personagem possui a habilidade
+    IF (SELECT COUNT(*) FROM pers_possui_hab WHERE person_id = p_person_id AND hab_id = p_hab_id) > 0 THEN
+        -- Obtém os atributos associados à habilidade
+        DECLARE hab_atributo CHAR(3);
+        SELECT atributo INTO hab_atributo FROM Habilidade WHERE id = p_hab_id;
+
+        -- Atualiza os atributos do personagem com base na habilidade aprimorada
+        CASE
+            WHEN hab_atributo = 'ATK' THEN
+                UPDATE PC SET ATK = ATK + 1 WHERE person_id = p_person_id;
+            WHEN hab_atributo = 'DEF' THEN
+                UPDATE PC SET DEF = DEF + 1 WHERE person_id = p_person_id;
+            WHEN hab_atributo = 'VEL' THEN
+                UPDATE PC SET VEL = VEL + 1 WHERE person_id = p_person_id;
+            ELSE
+                RAISE EXCEPTION 'Atributo não reconhecido para a habilidade.';
+        END CASE;
+
+        RAISE NOTICE 'Habilidade aprimorada com sucesso.';
+    ELSE
+        RAISE EXCEPTION 'Habilidade não encontrada no personagem.';
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION realizar_melhoria_habilidade_trigger() RETURNS TRIGGER AS $$
+BEGIN
+    -- Chama o procedimento de melhoria de habilidade ao inserir uma nova linha na tabela de melhoria de habilidade
+    PERFORM realizar_melhoria_habilidade(NEW.person_id, NEW.hab_id);
+    
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Trigger que dispara a melhoria de habilidade após a inserção de uma nova linha na tabela de melhoria de habilidade
+CREATE TRIGGER melhoria_habilidade_trigger
+AFTER INSERT ON pers_possui_hab
+FOR EACH ROW
+EXECUTE FUNCTION realizar_melhoria_habilidade_trigger();
 
 -- Trigger para evitar duplicações no nome do Mapa
 CREATE OR REPLACE FUNCTION evita_duplicacao_mapa()
