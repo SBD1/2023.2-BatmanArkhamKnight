@@ -6,85 +6,98 @@ DQL ( Data Query Language ) é uma parte fundamental de um sistema de gerenciame
 Abaixo segue algumas consultas com código SQL para o jogo do Batman Arkham Knight: 
 
 ```
---Informações do PC
-SELECT *
-FROM Pc
-WHERE personagem_id = 1; --Id do personagem
+--Selecionar todos os Mapas:
+SELECT * FROM public.Mapa;
 
---Missões realizadas pelo PC
-SELECT m.nome_missao, m.descricao, m.situacao
-FROM Missao m
-WHERE m.personagem_id = 1; --Id do personagem
+--Selecionar todas as regiões:
 
---Armas do PC
-SELECT a.nome_equipamento, a.nivel, a.descricao
-FROM Equipamento a
-JOIN Pcequip pe ON a.equip_id = pe.equip_id
-WHERE pe.personagem_id = 1 AND a.tipo_equipamento = 'Arma'; --Id do personagem
+SELECT * FROM public.Regiao;
 
---Veículos do PC
-SELECT v.nome_veiculo, v.tipo_veiculo
-FROM Veiculo v
-WHERE v.personagem_id = 1; --Id do personagem
-      --Para que consiga separar os veículos por tipo é só add 'GROUP BY'
+--Selecionar todos os NPCs:
 
---Equipamentos do PC
-SELECT e.nome_equipamento, e.tipo_equipamento, e.nivel, e.descricao
-FROM Equipamento e
-JOIN Pcequip pe ON e.equip_id = pe.equip_id
-WHERE pe.personagem_id = 1; --Id do personagem
+SELECT * FROM public.NPC;
 
---Armaduras do PC
-SELECT a.nome_equipamento, a.nivel, a.descricao, a.protecao
-FROM Equipamento a
-JOIN Pcequip pe ON a.equip_id = pe.equip_id
-JOIN Armadura ar ON a.equip_id = ar.equip_id
-WHERE pe.personagem_id = 1; --Id do personagem
+--Selecionar todas as Regiões com o nome do Mapa associado:
 
---Vilões derrotados
-SELECT v.nome_vilao, v.inteligencia, v.forca
-FROM Vilao v
-WHERE v.npc_id IN (
-    SELECT i.npc_id
-    FROM Instancia i
-    WHERE i.npc_id = v.npc_id
-) AND v.npc_id IN (
-    SELECT npc_id
-    FROM Npc
-    WHERE situacao_vida = 'Derrotado'
+SELECT R.*, M.nome as nome_mapa
+FROM public.Regiao R
+JOIN public.Mapa M ON R.mapa_id = M.id;
+
+--Listar todas as Habilidades e os Veículos que as possuem:
+
+SELECT H.*, V.nome as nome_veiculo
+FROM public.Habilidade H
+JOIN public.veic_possui_hab VP ON H.id = VP.hab_id
+JOIN public.Veiculo V ON VP.veic_id = V.id;
+
+--Encontrar todas as Missões que um NPC está associado:
+
+SELECT N.nome as nome_npc, M.*
+FROM public.NPC N
+JOIN public.Missao M ON N.person_id = M.NPC_id;
+
+--Encontrar todas as Missões que um PC cumpriu com sucesso:
+
+SELECT P.*, M.*
+FROM public.PC P
+JOIN public.cumpre_missao CM ON P.person_id = CM.PC_id
+JOIN public.Missao M ON CM.missao_id = M.id
+WHERE CM.status = 1; 
+
+--Encontrar todos os NPCs que estão associados a uma determinada missão:
+
+SELECT N.*, M.nome AS nome_missao
+FROM public.NPC N
+JOIN public.Missao M ON N.person_id = M.NPC_id;
+
+--Listar todos os Objetivos e seus status associados a uma missão específica:
+
+SELECT O.*, M.nome AS nome_missao, M.descr AS descr_missao
+FROM public.Objetivo O
+JOIN public.Missao M ON O.missao_id = M.id;
+
+-- Listar todas as Missões não cumpridas por um PC específico(substituir [ID_DO_SEU_PC] pelo ID específico do seu PC):
+
+SELECT M.*
+FROM public.Missao M
+WHERE M.id NOT IN (
+    SELECT missao_id
+    FROM public.cumpre_missao
+    WHERE PC_id = [ID_DO_SEU_PC]
 );
 
---NPC Derrotado
-SELECT n.npc_tipo, n.situacao_vida
-FROM Npc n
-WHERE n.local_id IN (
-    SELECT local_id
-    FROM Pc
-    WHERE personagem_id = 1 --Id do personagem
-) AND n.situacao_vida = 'Derrotado';
+--Encontrar todos os NPCs que têm um equipamento específico(Substitua [ID_DO_SEU_EQUIPAMENTO] pelo ID do equipamento desejado):
 
---Viagens realizadas
-SELECT r1.regiao_nome AS origem, r2.regiao_nome AS destino
-FROM Viagem v
-JOIN Regiao r1 ON v.viagem_origem = r1.regiao_id
-JOIN Regiao r2 ON v.viagem_destino = r2.regiao_id
-WHERE v.viagem_origem IN (
-    SELECT l.regiao_atual
-    FROM Local l
-    WHERE l.local_id = 1 --Id do personagem
-);
+SELECT N.*, E.nome AS nome_equipamento
+FROM public.NPC N
+JOIN public.equip_tem_efeito EE ON N.person_id = EE.equip_id
+JOIN public.Equipamento E ON EE.equip_id = E.id
+WHERE E.id = [ID_DO_SEU_EQUIPAMENTO];
 
---Locais visitados
-SELECT r.regiao_nome AS local_visitado
-FROM Local l
-JOIN Regiao r ON l.regiao_atual = r.regiao_id
-WHERE l.local_id = 1; --Id do personagem
+--Encontrar todos os Objetivos de Missão que ainda não foram concluídos:
 
---Regiões visitadas
-SELECT DISTINCT r.regiao_nome AS regiao_visitada
-FROM Local l
-JOIN Regiao r ON l.regiao_atual = r.regiao_id
-WHERE l.local_id = 1;
+SELECT O.*, M.nome AS nome_missao
+FROM public.Objetivo O
+JOIN public.Missao M ON O.missao_id = M.id
+WHERE O.status <> 1; 
+
+--Contar o número de Efeitos associados a cada Equipamento e listar apenas os Equipamentos com mais de um efeito:
+
+SELECT E.*, COUNT(EE.efeito_id) AS num_efeitos_associados
+FROM public.Equipamento E
+LEFT JOIN public.equip_tem_efeito EE ON E.id = EE.equip_id
+GROUP BY E.id
+HAVING COUNT(EE.efeito_id) > 1;
+
+
+--Listar todos os Locais que têm pelo menos um NPC e ordenar pelo número de NPCs em ordem decrescente:
+
+SELECT L.id, COUNT(N.person_id) AS num_npcs
+FROM public.Local L
+LEFT JOIN public.Quadra Q ON L.id = Q.local_id
+LEFT JOIN public.NPC N ON Q.id = N.quadra_id
+GROUP BY L.id
+ORDER BY num_npcs DESC;
 
 ```
 
