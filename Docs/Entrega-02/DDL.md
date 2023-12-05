@@ -5,177 +5,190 @@ DDL ( Data Definition Language ) são os comandos que interagem com os objetos d
 Abaixo segue a criação das tables com código SQL para o jogo do Batman Arkham Knight:  
   
 ```
-CREATE TABLE IF NOT EXISTS public.Gotham(
-    gotham_id integer NOT NULL,
-    CONSTRAINT gotham_pkey PRIMARY KEY (gotham_id)
+CREATE TABLE IF NOT EXISTS public.Mapa(
+    id SERIAL PRIMARY KEY,
+    nome CHAR(48) NOT NULL,
+    total_pts INTEGER NOT NULL,
+    tamanho_x INTEGER NOT NULL,
+    tamanho_y INTEGER NOT NULL
 );
-
 
 CREATE TABLE IF NOT EXISTS public.Regiao(
-    regiao_id integer NOT NULL,
-    regiao_nome character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    gotham_atual integer NOT NULL,
-    CONSTRAINT regiao_pk PRIMARY KEY (regiao_id),
-    CONSTRAINT reg_fk FOREIGN KEY (gotham_atual)
-        REFERENCES public.gotham (gotham_id) MATCH SIMPLE
-);
-
-CREATE TABLE IF NOT EXISTS public.Viagem(
-    viagem_origem integer NOT NULL,
-    viagem_destino integer NOT NULL,
-    CONSTRAINT viagemorigem_fk FOREIGN KEY (viagem_origem)  
-        REFERENCES public.regiao (regiao_id) MATCH SIMPLE,
-    CONSTRAINT viagemdestino_fk FOREIGN KEY (viagem_destino)
-        REFERENCES public.regiao (regiao_id) MATCH SIMPLE
+    id SERIAL PRIMARY KEY,
+    mapa_id INTEGER REFERENCES public.Mapa (id),
+    nome CHAR(24) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS public.Local(
-    local_id integer NOT NULL,
-    regiao_atual integer NOT NULL,
-    coordenada_x integer,
-    coordenada_y integer,
-    CONSTRAINT local_pk PRIMARY KEY (local_id),
-    CONSTRAINT local_fk FOREIGN KEY (regiao_atual)
-        REFERENCES public.regiao (regiao_id) MATCH SIMPLE
+    id SERIAL PRIMARY KEY,
+    regiao_id INTEGER REFERENCES public.Regiao (id),
+    acesso INTEGER NOT NULL, 
+    origem_x INTEGER NOT NULL,
+    origem_y INTEGER NOT NULL
 );
 
-
-CREATE TABLE IF NOT EXISTS public.Pc(
-    personagem_id integer NOT NULL,
-    local_id integer NOT NULL,
-    nome character varying COLLATE pg_catalog."default" NOT NULL,
-    hp integer NOT NULL,
-    CONSTRAINT pc_pk PRIMARY KEY (personagem_id),
-    CONSTRAINT pc_fk FOREIGN KEY (local_id)
-        REFERENCES public.local (local_id) MATCH SIMPLE
+CREATE TABLE IF NOT EXISTS public.Quadra(
+    id SERIAL PRIMARY KEY,
+    local_id INTEGER REFERENCES public.Local (id),
+    escalavel BOOLEAN NOT NULL,
+    coord_x INTEGER NOT NULL,
+    coord_y INTEGER NOT NULL
 );
 
-
-CREATE TABLE IF NOT EXISTS public.Npc(
-    npc_id integer NOT NULL,
-    local_id integer NOT NULL,
-    npc_tipo character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    situacao_vida character varying(20) COLLATE pg_catalog."default" DEFAULT 'Vivo'::character varying,
-    CONSTRAINT npc_pk PRIMARY KEY (npc_id),
-    CONSTRAINT npc_fk FOREIGN KEY (local_id)
-        REFERENCES public.local (local_id) MATCH SIMPLE
-);
-
-
-CREATE TABLE IF NOT EXISTS public.Instancia(
-    instancia_id integer NOT NULL,
-    npc_id integer NOT NULL,
-    nivel_dificuldade character varying(20) COLLATE pg_catalog."default" DEFAULT 1,
-    CONSTRAINT instancia_pk PRIMARY KEY (instancia_id),
-    CONSTRAINT instancia_fk FOREIGN KEY (npc_id)
-        REFERENCES public.npc (npc_id) MATCH SIMPLE
-);
-
-
-CREATE TABLE IF NOT EXISTS public.Vilao(
-    vilao_id integer NOT NULL,
-    npc_id integer NOT NULL,
-    nome_vilao character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    inteligencia integer DEFAULT 20,
-    forca integer DEFAULT 20,
-    CONSTRAINT vilao_pk PRIMARY KEY (vilao_id),
-    CONSTRAINT vilao_fk FOREIGN KEY (npc_id)
-        REFERENCES public.npc (npc_id) MATCH SIMPLE
-);
-	
-
-CREATE TABLE IF NOT EXISTS public.Missao(
-    missao_id integer NOT NULL,
-    personagem_id integer NOT NULL,
-    nome_missao character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    descricao character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    situacao character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT missao_pk PRIMARY KEY (missao_id),
-    CONSTRAINT missao_fk FOREIGN KEY (personagem_id)
-        REFERENCES public.pc (personagem_id) MATCH SIMPLE
-);
-
-CREATE TABLE IF NOT EXISTS public.Prerequisito(
-    requisito integer NOT NULL,
-    possuiPreReq integer NOT NULL,
-    CONSTRAINT viagemorigem_fk FOREIGN KEY (requisito)  
-        REFERENCES public.missao (missao_id) MATCH SIMPLE,
-    CONSTRAINT viagemdestino_fk FOREIGN KEY (possuiPreReq)
-        REFERENCES public.missao (missao_id) MATCH SIMPLE
+CREATE TABLE IF NOT EXISTS public.Habilidade(
+    id SERIAL PRIMARY KEY,
+    nome CHAR(32) NOT NULL,
+    descr CHAR(128) NOT NULL,
+    alcance INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS public.Veiculo(
-    veiculo_id integer NOT NULL,
-    personagem_id integer NOT NULL,
-    nome_veiculo character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    tipo_veiculo character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT veiculo_pk PRIMARY KEY (veiculo_id),
-    CONSTRAINT veiculo_fk FOREIGN KEY (personagem_id)
-        REFERENCES public.pc (personagem_id) MATCH SIMPLE
+    id SERIAL PRIMARY KEY,
+    local_id INTEGER REFERENCES public.Local (id),
+    HP INTEGER NOT NULL,
+    VEL INTEGER NOT NULL,
+    nome CHAR(32) NOT NULL
 );
 
-
-CREATE TABLE IF NOT EXISTS public.Terrestre(
-    veicterrestre_id integer NOT NULL,
-    veiculo_id integer NOT NULL,
-    CONSTRAINT veicterrestre_pk PRIMARY KEY (veicterrestre_id),
-    CONSTRAINT veicterrestre_fk FOREIGN KEY (veiculo_id)
-        REFERENCES public.veiculo (veiculo_id) MATCH SIMPLE
-);
-
-
-CREATE TABLE IF NOT EXISTS public.Aquatico(
-    veicaquatico_id integer NOT NULL,
-    veiculo_id integer NOT NULL,
-    CONSTRAINT veicaquatico_pk PRIMARY KEY (veicaquatico_id),
-    CONSTRAINT veicaquatico_fk FOREIGN KEY (veiculo_id)
-        REFERENCES public.veiculo (veiculo_id) MATCH SIMPLE
-);
-
-
-CREATE TABLE IF NOT EXISTS public.Aereo(
-    veicaereo_id integer NOT NULL,
-    veiculo_id integer NOT NULL,
-    CONSTRAINT veicaereo_pk PRIMARY KEY (veicaereo_id),
-    CONSTRAINT veicaereo_fk FOREIGN KEY (veiculo_id)
-        REFERENCES public.veiculo (veiculo_id) MATCH SIMPLE
+CREATE TABLE IF NOT EXISTS public.Efeito(
+    id SERIAL PRIMARY KEY,
+    nome INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS public.Equipamento(
-    equip_id integer NOT NULL,
-    tipo_equipamento character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    nome_equipamento character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    nivel integer NOT NULL,
-    descricao character varying(55) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT equip_pk PRIMARY KEY (equip_id)
+    id SERIAL PRIMARY KEY,
+    nome CHAR(32) NOT NULL,
+    descr CHAR(128) NOT NULL,
+    preco INTEGER NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS public.Pcequip(
-    personagem_id integer NOT NULL,
-    equip_id integer NOT NULL,
-    level integer NOT NULL,
-    CONSTRAINT pcequipequi_fk FOREIGN KEY (equip_id)
-        REFERENCES public.equipamento (equip_id) MATCH SIMPLE,
-    CONSTRAINT pcquipper_fk FOREIGN KEY (personagem_id)
-        REFERENCES public.pc (personagem_id) MATCH SIMPLE
+CREATE TABLE IF NOT EXISTS public.Personagem(
+    id SERIAL PRIMARY KEY,
+    tipo INTEGER NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS public.Armadura(
-    armadura_id integer NOT NULL,
-    equip_id integer NOT NULL,
-    protecao integer NOT NULL,
-    CONSTRAINT armadura_pk PRIMARY KEY (armadura_id),
-    CONSTRAINT equip_fk FOREIGN KEY (equip_id)
-        REFERENCES public.equipamento(equip_id) MATCH SIMPLE
+CREATE TABLE IF NOT EXISTS public.NPC(
+    person_id SERIAL PRIMARY KEY,
+    quadra_id INTEGER REFERENCES public.Quadra (id),
+    veic_id INTEGER REFERENCES public.Veiculo (id),
+    nome CHAR(32) NOT NULL,
+    HP INTEGER NOT NULL,
+    ATK INTEGER NOT NULL,
+    DEF INTEGER NOT NULL,
+    Descr VARCHAR(512) NOT NULL,
+    NPC_foco INTEGER NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS public.Arma(
-    arma_id integer NOT NULL,
-    equip_id integer NOT NULL,
-    dano integer NOT NULL,
-    CONSTRAINT arma_pk PRIMARY KEY (arma_id),
-    CONSTRAINT equip_arma_fk FOREIGN KEY (equip_id)
-        REFERENCES public.equipamento(equip_id) MATCH SIMPLE
+CREATE TABLE IF NOT EXISTS public.PC(
+    person_id SERIAL PRIMARY KEY,
+    NPC_alvo INTEGER REFERENCES public.NPC (person_id),
+    HP INTEGER NOT NULL,
+    ATK INTEGER NOT NULL, 
+    DEF INTEGER NOT NULL,
+    XP INTEGER NOT NULL,
+    furtividade INTEGER NOT NULL,
+    espaco INTEGER NOT NULL,
+    quadra_id INTEGER REFERENCES public.Quadra (id),
+    veic_id INTEGER REFERENCES public.Veiculo (id),
+    descr VARCHAR(514) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.Missao(
+    id SERIAL PRIMARY KEY,
+    nome CHAR(32) NOT NULL,
+    descr VARCHAR(256) NOT NULL,
+    pontos INTEGER NOT NULL,
+    NPC_id INTEGER REFERENCES public.NPC (person_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.Objetivo(
+    id SERIAL PRIMARY KEY,
+    local_id INTEGER REFERENCES public.Local (id),
+    missao_id INTEGER REFERENCES public.Missao (id),
+    status INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.Dialogo(
+    id SERIAL PRIMARY KEY,
+    NPC_id INTEGER REFERENCES public.NPC (person_id),
+    dial_texto VARCHAR(512) NOT NULL,
+    dial_numero INTEGER NOT NULL,
+    dial_falado BOOLEAN NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.Inimigo(
+    NPC_id INTEGER PRIMARY KEY REFERENCES public.NPC (person_id),
+    nome_real CHAR(32),
+    agressividade INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.veic_possui_hab(
+    veic_id INTEGER REFERENCES public.Veiculo (id),
+    hab_id INTEGER REFERENCES public.Habilidade (id),
+    PRIMARY KEY (veic_id, hab_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.PC_melhora_equip(
+    PC_id INTEGER REFERENCES public.PC (person_id),
+    equip_id INTEGER REFERENCES public.Equipamento (id),
+    preco INTEGER NOT NULL,
+    PRIMARY KEY (PC_id, equip_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.pc_equipa(
+    PC_id INTEGER REFERENCES public.PC (person_id),
+    equip_id INTEGER REFERENCES public.Equipamento (id),
+    PRIMARY KEY (PC_id, equip_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.pers_possui_hab(
+    person_id INTEGER REFERENCES public.Personagem (id),
+    hab_id INTEGER REFERENCES public.Habilidade (id),
+    PRIMARY KEY (person_id, hab_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.equip_tem_efeito(
+    equip_id INTEGER REFERENCES public.Equipamento (id),
+    efeito_id INTEGER REFERENCES public.Efeito (id),
+    PRIMARY KEY (equip_id, efeito_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.pre_requisito(
+    missao_id INTEGER REFERENCES public.Missao (id),
+    missao_pre_req_id INTEGER REFERENCES public.Missao (id),
+    PRIMARY KEY (missao_id, missao_pre_req_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.cumpre_missao(
+    PC_id INTEGER REFERENCES public.PC (person_id),
+    missao_id INTEGER REFERENCES public.Missao (id),
+    status INTEGER NOT NULL,
+    PRIMARY KEY (PC_id, missao_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.desbloqueia_equip(
+    missao_id INTEGER REFERENCES public.Missao (id),
+    equip_id INTEGER REFERENCES public.Equipamento (id),
+    PRIMARY KEY (missao_id, equip_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.libera_missao(
+    missao_id INTEGER REFERENCES public.Missao (id),
+    dial_id INTEGER REFERENCES public.Dialogo (id),
+    PRIMARY KEY (missao_id, dial_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.guarda_dialogo(
+    PC_id INTEGER REFERENCES public.PC (person_id),
+    dial_id INTEGER REFERENCES public.Dialogo (id),
+    PRIMARY KEY (PC_id, dial_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.combate(
+    PC_id INTEGER REFERENCES public.PC (person_id),
+    NPC_id INTEGER REFERENCES public.NPC (person_id),
+    distancia INTEGER NOT NULL,
+    PRIMARY KEY (PC_id, NPC_id)
 );
 
 ```
