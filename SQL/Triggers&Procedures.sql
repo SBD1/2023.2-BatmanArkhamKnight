@@ -63,9 +63,9 @@ BEGIN
         SELECT preco INTO melhoria_preco FROM Equipamento WHERE id = p_equip_id;
 
         -- Verifica se o PC possui recursos suficientes para a melhoria
-        IF (SELECT HP FROM PC WHERE person_id = p_pc_id) >= melhoria_preco THEN
+        IF (SELECT XP FROM PC WHERE person_id = p_pc_id) >= melhoria_preco THEN
             -- Atualiza o HP do PC após a melhoria
-            UPDATE PC SET HP = HP - melhoria_preco WHERE person_id = p_pc_id;
+            UPDATE PC SET XP = XP - melhoria_preco WHERE person_id = p_pc_id;
 
             -- Realiza a melhoria no equipamento (pode adicionar lógica específica aqui)
             UPDATE pc_equipa SET preco = preco + melhoria_preco WHERE PC_id = p_pc_id AND equip_id = p_equip_id;
