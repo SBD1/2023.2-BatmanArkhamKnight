@@ -30,6 +30,8 @@ Nossa equipe de trabalho é composta pelos estudantes de Engenharia de Software 
     - [Apresentação Entrega 1](https://youtu.be/HRS933FJc_I)
 - [Entrega 2](https://github.com/SBD1/2023.2-BatmanArkhamKnight/tree/main/Docs/Entrega-02)
     - [Apresentação Entrega 2](https://www.youtube.com/watch?v=GA20XzFjjZY)
+- [Entrega 3]()
+    - [Apresentação Entrega 3]()
 ### Histórico de versões
 
 | Versão |    Data    | Descrição                                      | Autor                                               | Revisão                                             |
