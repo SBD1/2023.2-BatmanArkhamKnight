@@ -3,3 +3,6 @@ class PCMelhoraEquip:
         self.PC_id = PC_id
         self.equip_id = equip_id
         self.preco = preco
+        
+    def __str__(self):
+        return f"PCMelhoraEquip[PC_id={self.PC_id}, equip_id={self.equip_id}, preco={self.preco}]"

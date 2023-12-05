@@ -11,3 +11,6 @@ class PC:
         self.quadra_id = quadra_id
         self.veic_id = veic_id
         self.descr = descr
+    
+    def __str__(self):
+        return f"PC[person_id={self.person_id}, NPC_alvo={self.NPC_alvo}, HP={self.HP}, ATK={self.ATK}, DEF={self.DEF}, XP={self.XP}, furtividade={self.furtividade}, espaco={self.espaco}, quadra_id={self.quadra_id}, veic_id={self.veic_id}, descr={self.descr}]"
