@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./src/database:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: bat_admin
+      POSTGRES_PASSWORD: bat987
+      POSTGRES_DB: trabaio
+    ports:
+      - "5432:5432" 
+
+volumes:
+  postgres:
