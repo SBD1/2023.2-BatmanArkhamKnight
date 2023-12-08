@@ -3,7 +3,8 @@ import os
 
 from typing import Optional
 from service.pc_service import PCService
-
+from service.geral_service import GeneralServices
+from repositories.npc_repository import NPCRepository
 
 
 def clear():
@@ -18,8 +19,8 @@ class Main:
         self.salaService = SalaService()
         self.salaRepository = SalaRepository()
         self.service = GeneralServices()
-        self.inimigos = InimigoRepository()
-        self.inventarioService = InventarioService()
+        self.inimigos = NPCRepository()
+
 
         
     def start(self):
