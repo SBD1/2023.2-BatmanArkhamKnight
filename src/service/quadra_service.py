@@ -2,20 +2,20 @@ from typing import Optional
 
 from model.quadra import Quadra
 from repositories.quadra_repository import QuadraRepository
-from repositories.pc_repository import PcRepository
+from repositories.pc_repository import PCRepository
 
-from model.pc import Pc
+from model.pc import PC
 
 class QuadraService:
     def __init__(self):
         self.quadraRepository = QuadraRepository()
-        self.pcRepository = PcRepository()
+        self.pcRepository = PCRepository()
     
     def getQuadra(self, pc):
         quadraAtual = self.quadraRepository.quadraAtual(pc)
         return quadraAtual
     
-    def mover(self, pc: Pc) -> Optional[Pc]:
+    def mover(self, pc: PC) -> Optional[PC]:
         quadraAtual = self.quadraRepository.quadraAtual(pc)
         
         inp = input("Você possui as seguintes opções:\n" +
@@ -39,7 +39,7 @@ class QuadraService:
         if result is not None:
             pc = result
         else:
-            print('Pc not found')
+            print('Personagem não encontrado')
 
         print(pc)
 

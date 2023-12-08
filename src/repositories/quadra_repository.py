@@ -56,15 +56,14 @@ class QuadraRepository:
             with conn.cursor() as cursor:
                 cursor.execute(
                     """SELECT *
-                        FROM public.comum
-                        join public.inimigo on public.comum.id_inimigo = public.inimigo.id
-                        join public.npc on public.npc.id_quadra = %s and public.inimigo.id_npc=npc.id;
+                        FROM public.NPC
+                        WHERE id_quadra = %s;
                     """,
                         [pc.id_quadra])
                 result = cursor.fetchone()
         print(result)
 
-        inimigo = Comum(*result)
+        inimigo = NPC(*result)
 
         return inimigo
     
