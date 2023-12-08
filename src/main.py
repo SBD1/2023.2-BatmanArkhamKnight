@@ -3,11 +3,8 @@ import os
 
 from typing import Optional
 from service.pc_service import PCService
-<<<<<<< HEAD
 from service.geral_service import GeneralServices
 from repositories.npc_repository import NPCRepository
-
-
 from repositories.quadra_repository import QuadraRepository
 
 
