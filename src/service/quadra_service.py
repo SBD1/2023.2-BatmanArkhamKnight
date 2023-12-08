@@ -34,7 +34,7 @@ class QuadraService:
         elif inp == 's' or inp == 'S':
             self.quadraRepository.updateQuadra(pc, quadraAtual.destinos[3])
         
-        result = self.pcRepository.findPcByName(pc.nome)
+        result = self.pcRepository.findPCById(pc.person_id)
         
         if result is not None:
             pc = result
