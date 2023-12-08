@@ -6,7 +6,7 @@ from service.pc_service import PCService
 from service.geral_service import GeneralServices
 from repositories.npc_repository import NPCRepository
 from repositories.quadra_repository import QuadraRepository
-
+from service.quadra_service import QuadraService
 
 def clear():
     # os.system('cls')
