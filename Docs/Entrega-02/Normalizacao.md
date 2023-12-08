@@ -13,9 +13,9 @@ A normalização em bancos de dados é um processo essencial para organizar dado
 
 - Forma Normal de Boyce-Codd (FNBC): A Forma Normal de Boyce-Codd se concentra em eliminar anomalias associadas a dependências funcionais e preserva a integridade do banco de dados.
 
-### Tabela Gotham - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela Mapa - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**gotham_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -25,7 +25,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 ### Tabela Região - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**regiao_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -33,7 +33,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
 
-### Tabela Viaja - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela Local - Normalização feita até a 3ª Forma Normal (3NF)
 
 **1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN.
 
@@ -43,9 +43,9 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
 
-### Tabela PC - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela Quadra - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**personagem_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -55,7 +55,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 ### Tabela NPC - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos,  a tabela já estava na 1FN. A chave primária é "**npc_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos,  a tabela já estava na 1FN. A chave primária é "**person_id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -63,9 +63,9 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
 
-### Tabela Vilão - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela PC - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**vilao_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**person_id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -73,9 +73,9 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
 
-### Tabela Instância - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela Personagem - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**inst_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -85,7 +85,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 ### Tabela Missão - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**missao_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -93,19 +93,9 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
 
-### Tabela Pre requisito - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela Habilidade - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN.
-
-**2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
-
-**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
-
-Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
-
-### Tabela ER PC x Equipamento  - Normalização feita até a 3ª Forma Normal (3NF)
-
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN.
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -113,9 +103,39 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
 
-### Tabela Veiculo - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela Objetivo - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**veiculo_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
+
+**2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+
+**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
+
+Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+### Tabela Dialogo - Normalização feita até a 3ª Forma Normal (3NF)
+
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
+
+**2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+
+**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
+
+Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+### Tabela Inimigo - Normalização feita até a 3ª Forma Normal (3NF)
+
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
+
+**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+
+**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
+
+Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+### Tabela Efeito - Normalização feita até a 3ª Forma Normal (3NF)
+
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -125,27 +145,27 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 ### Tabela Equipamento - Normalização feita até a 3ª Forma Normal (3NF)
 
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
+
+**2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+
+**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
+
+Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+### Tabela equip_tem_efeito - Normalização feita até a 3ª Forma Normal (3NF)
+
 **1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**equip_id**"
 
-**2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
 **3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
 
-### Tabela Armadura - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela Evidência - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**armadura_id**"
-
-**2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
-
-**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
-
-Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
-
-### Tabela Arma - Normalização feita até a 3ª Forma Normal (3NF)
-
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**arma_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -153,19 +173,9 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
 
-### Tabela Terrestre - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela Veiculo  - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**veicTerrestre_id**"
-
-**2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
-
-**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
-
-Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
-
-### Tabela Aquático - Normalização feita até a 3ª Forma Normal (3NF)
-
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**veicAquatico_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**id**"
 
 **2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
@@ -173,11 +183,61 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
 
-### Tabela Aereo  - Normalização feita até a 3ª Forma Normal (3NF)
+### Tabela PC_melhora_equip  - Normalização feita até a 3ª Forma Normal (3NF)
 
-**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**veicAereo_id**"
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**PC_id**" e "**equip_id**"
 
-**2ª Forma Normal (2FN):** Como não existem chaves primárias compostas e os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+
+**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
+
+Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+### Tabela pre_requisito - Normalização feita até a 3ª Forma Normal (3NF)
+
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**missao_id**" "**missao_pre_req_id**""
+
+**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+
+**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
+
+Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+### desbloqueia_equip  - Normalização feita até a 3ª Forma Normal (3NF)
+
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**missao_id**" e "**equip_id**"
+
+**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+
+**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
+
+Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+### Tabela cumpre_missao  - Normalização feita até a 3ª Forma Normal (3NF)
+
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**PC_id**" e "**missao_id**"
+
+**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+
+**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
+
+Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+### Tabela veic_possui_hab  - Normalização feita até a 3ª Forma Normal (3NF)
+
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**veic_id**" e "**hab_id**"
+
+**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+
+**3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
+
+Não existem dependências funcionais complementares mais, portanto não é necessário a 4ª Forma Normal (FN) e nem a Forma normal de Boyce-Codd(FNBC)
+
+### Tabela libera_missao  - Normalização feita até a 3ª Forma Normal (3NF)
+
+**1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**missao_id**" e "**dial_id**"
+
+**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
 **3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
 
@@ -188,3 +248,4 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 | Versão |    Data    | Descrição                | Autor                                                                                                                 |
 | :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
 | `1.0`  | 29/10/2023 | Criação do documento de Normalização |  [Luis Miranda](https://github.com/LuisMiranda10)    |
+| `1.1`  | 08/12/2023 | Atualização da Normalização |  [Luis Miranda](https://github.com/LuisMiranda10)    |
