@@ -32,21 +32,22 @@ Segue a baixo a descrição de cada entidade.
 
 | **Entidade** | **Descrição** |
 | ------------ | ------------- |
-| Mapa         |               |
-| Região       |               |
-| Local        |               |
+| Mapa         | Localidade onde se encontra tudo o que acontece dentro do jogo. |
+| Região       | Superfície terrestre que apresenta características naturais e específicas. |
+| Local        | Localidade da Região. |
 | Quadra       |               |
-| Evidência    |               |
+| Personagem   |               |
+| NPC          |               |
+| Inimigo      |               |
+| Habilidade   |               |
+| Veículo      |               |
+| PC           |               |
+| Equipamento  |               |
+| Efeito       |               |
+| Diálogo      |               |
 | Missão       |               |
 | Objetivo     |               |
-| Diálogo      |               |
-| Inimigo      |               |
-| NPC          |               |
-| PC           |               |
-| Veículo      |               |
-| Habilidade   |               |
-| Veic_possui_hab |               |
-
+| Evidência    |               |
 
 ### Gotham
 
