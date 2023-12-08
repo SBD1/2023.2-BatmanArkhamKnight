@@ -115,7 +115,7 @@ class Main:
                 return print("lutei")
             
             elif inp == '2':
-                self.activePC = self.salaService.mover(self.activePC)
+                self.activePC = self.Service.mover(self.activePC)
                 self.checkSala(self.activePC)    
             
             else:
@@ -130,15 +130,6 @@ class Main:
             monstro = self.inimigos.encontrarInimigos(activePC)
             self.service.lutar(activePC, monstro)
         
-        if self.inimigos.encontrarBoss(activePC) != None:
-            print('Você encontrou um boss!')
-            monstro = self.inimigos.encontrarBoss(activePC)
-            self.service.lutar(activePC, monstro)
-        
-        if self.salaRepository.encontrarBau(activePC) != None:
-
-            self.salaService.encontrarBau(activePC, self.activeInventary.id)
-            print('teste' + str(self.activeInventary))
 
 
 if __name__ == '__main__':

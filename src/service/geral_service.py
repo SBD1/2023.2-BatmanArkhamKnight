@@ -1,13 +1,13 @@
 from model.pc import PC
 from model.npc import NPC
-from repositories.sala_repository import SalaRepository
+from repositories.quadra_repository import QuadraRepository
 import time
 from repositories.pc_repository import PCRepository
 
 
 class GeneralServices:
     def __init__(self):
-        self.salaRepository = SalaRepository()
+        self.salaRepository = QuadraRepository()
         self.pcRepository = PCRepository()
 
     def lutar(self, pc: PC, npc):
