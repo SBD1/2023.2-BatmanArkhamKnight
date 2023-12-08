@@ -95,7 +95,7 @@ HAVING COUNT(EE.efeito_id) > 1;
 SELECT L.id, COUNT(N.person_id) AS num_npcs
 FROM public.Local L
 LEFT JOIN public.Quadra Q ON L.id = Q.local_id
-LEFT JOIN public.NPC N ON Q.id = N.quadra_id
+LEFT JOIN public.NPC N ON Q.id = N.id_quadra
 GROUP BY L.id
 ORDER BY num_npcs DESC;
 ```

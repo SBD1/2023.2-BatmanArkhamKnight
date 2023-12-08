@@ -70,7 +70,7 @@ Abaixo podemos visualizar as tabelas referentes ao Dicionário de Dados.
 | nome       | Nome do NPC                                                                 | Char    | 32      | Not Null                                                                                                                  |
 | HP         | Pontos de saúde. Começa a ser afetado por ataques se DEF = 0 ou se o NPC estiver distraído                                   | Int     | 4       | Not Null                                                                                                                  |
 | DEF        | Pontos de defesa. Se regenera se NPC sair do combate.                         | Int     | 4       | Not Null                                                                                                                  |
-| quadra_id  | Referência para quadra onde o personagem está                               | Int     | 4       | FK                                                                                                                        |
+| id_quadra  | Referência para quadra onde o personagem está                               | Int     | 4       | FK                                                                                                                        |
 | veic_id    | Referência para veículo em que o personagem está                             | Int     | 4       | FK                                                                                                                        |
 | descr      | Uma curta descrição do personagem                                           | Varchar | 512     | Not Null                                                                                                                  |
 
@@ -90,7 +90,7 @@ Abaixo podemos visualizar as tabelas referentes ao Dicionário de Dados.
 | XP         | Saldo de pontos do PC                                                      | Int     | 4       | Not Null                                                                                                                    |
 | furtividade| Indica se o PC está sendo furtivo ou não. PC é furtivo ao atacar furtivamente, ao se esgueirar ou ao escalar prédios.| Int     | 4       | Not Null                                                                                                                    |
 | espaco     | Número de equipamentos que podem ser equipados de uma vez                  | Int     | 4       | Not Null                                                                                                                    |
-| quadra_id  | Referência para quadra onde o personagem está                               | Int     | 4       | FK                                                                                                                          |
+| id_quadra  | Referência para quadra onde o personagem está                               | Int     | 4       | FK                                                                                                                          |
 | veic_id    | Referência para veículo em que o personagem está                             | Int     | 4       | FK                                                                                                                          |
 | descr      | Uma curta descrição do personagem                                           | Varchar | 512     | Not Null                                                                                                                    |
 
@@ -217,7 +217,7 @@ Abaixo podemos visualizar as tabelas referentes ao Dicionário de Dados.
 |-----------|-------------------------------------------------------------------------|--------|---------|---------------------------------------------------------|
 | id        | Chave primária da evidência                                           | Int    | 4       | PK                                                      |
 | objet_id  | Referência ao objetivo ao qual a evidência pertence. A evidência só é visível se o status do seu objetivo for em andamento. Um objetivo pode ter várias evidências | Int | 4 | FK |
-| quadra_id | Referência à quadra onde a evidência está                                | Int    | 4       | FK                                                      |
+| id_quadra | Referência à quadra onde a evidência está                                | Int    | 4       | FK                                                      |
 | local_id  | Referência ao possível local liberado pela evidência                  | Int    | 4       | FK                                                      |
 | aparencia | Texto que descreve a evidência quando é vista a olho nu               | Char   | 48      | Not Null                                                |
 | analise   | Texto que descreve a evidência quando vista com equipamento certo      | Char   | 64      | Not Null                                                |
