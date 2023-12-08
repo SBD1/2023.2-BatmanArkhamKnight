@@ -302,7 +302,7 @@ Abaixo podemos visualizar as tabelas referentes ao Dicionário de Dados.
 | Variável  | Descrição                                               | Tipo | Tamanho | Restrições de Domínio   |
 |-----------|---------------------------------------------------------|------|---------|-------------------------|
 | missao_id | Referência à missão                                      | Int  | 4       | PK, FK                  |
-| dial_id   | Referência para o diálogo
+| dial_id   | Referência para o diálogo                                 | Int  | 4       | PK, FK                  |
 
 ## Histórico de versões
 
