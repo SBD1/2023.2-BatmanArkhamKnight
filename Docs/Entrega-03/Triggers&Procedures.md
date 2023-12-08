@@ -261,3 +261,4 @@ $$ LANGUAGE plpgsql;
 | Versão |    Data    | Descrição                                           | Autor                                          |
 | :----: | :--------: | --------------------------                          | ---------------------------------------------- |
 | `1.0`  | 05/12/2023 | Criação do documento                                | [Milena Baruc](https://github.com/MilenaBaruc)  |
+| `1.1`  | 08/12/2023 | Criação do Triggers e Procedures                              | [Luis Miranda](https://github.com/LuisMiranda10) |
