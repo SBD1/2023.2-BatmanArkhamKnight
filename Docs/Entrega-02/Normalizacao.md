@@ -187,7 +187,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 **1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**PC_id**" e "**equip_id**"
 
-**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+**2ª Forma Normal (2FN):** Não existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
 **3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
 
@@ -197,7 +197,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 **1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**missao_id**" "**missao_pre_req_id**""
 
-**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+**2ª Forma Normal (2FN):** Não existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
 **3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
 
@@ -207,7 +207,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 **1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**missao_id**" e "**equip_id**"
 
-**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+**2ª Forma Normal (2FN):** Não existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
 **3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
 
@@ -217,7 +217,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 **1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**PC_id**" e "**missao_id**"
 
-**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+**2ª Forma Normal (2FN):** Não existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
 **3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
 
@@ -227,7 +227,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 **1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**veic_id**" e "**hab_id**"
 
-**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+**2ª Forma Normal (2FN):** Não existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
 **3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
 
@@ -237,7 +237,7 @@ Não existem dependências funcionais complementares mais, portanto não é nece
 
 **1ª Forma Normal (1FN):** Não existem atributos que são multivalorados, portanto além dos atributos serem atômicos, a tabela já estava na 1FN. A chave primária é "**missao_id**" e "**dial_id**"
 
-**2ª Forma Normal (2FN):** Existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
+**2ª Forma Normal (2FN):** Não existem chaves primárias compostas, porém os atributos comuns não dependem parcialmente de qualquer chave, a 2FN não se aplica a esta tabela.
 
 **3ª Forma Normal (3FN):** A tabela está na 3FN, ja que os atributos comuns não dependem transitivamente de qualquer superchave.
 
