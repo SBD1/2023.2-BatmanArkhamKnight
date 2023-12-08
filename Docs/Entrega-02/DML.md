@@ -27,6 +27,7 @@ DELETE:
 DELETE FROM public.Missao
 WHERE missao_id = 2;
 ```
+
 ## DML do projeto:
 
 A seguir, estão exemplos fictícios de como será feita as inserções nas tabelas do projeto da disciplina.
@@ -189,7 +190,6 @@ INSERT INTO public.combate (PC_id, NPC_id, distancia)
 VALUES (4, 4, 10),
        (5, 5, 15),
        (6, 6, 20);
-
 ```
 
 ## Histórico de versões
@@ -197,3 +197,4 @@ VALUES (4, 4, 10),
 | Versão |    Data    | Descrição                | Autor                                                                                                                 |
 | :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
 | `1.0`  | 29/10/2023 | Criação do documento DML | [Mateus Orlando](https://github.com/MateusPy)                                                                         |
+| `2.0`  | 07/12/2023 | Atualização | [Milena Baruc](https://github.com/MilenaBaruc) |

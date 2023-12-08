@@ -1,6 +1,7 @@
 # Data Definition Language
 
 ## Introdução
+
 DDL ( Data Definition Language ) são os comandos que interagem com os objetos do banco.
 Abaixo segue a criação das tables com código SQL para o jogo do Batman Arkham Knight:  
   
@@ -190,7 +191,6 @@ CREATE TABLE IF NOT EXISTS public.combate(
     distancia INTEGER NOT NULL,
     PRIMARY KEY (PC_id, NPC_id)
 );
-
 ```
 
 ## Histórico de versões
@@ -198,3 +198,4 @@ CREATE TABLE IF NOT EXISTS public.combate(
 | Versão |    Data    | Descrição                | Autor                                                                                                                 |
 | :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
 | `1.0`  | 29/10/2023 | Criação do documento DDL | [Nicolas Bomfim](https://github.com/NickGehjk) e  [Luis Miranda](https://github.com/LuisMiranda10)                                                                       |
+| `2.0`  | 07/12/2023 | Atualização | [Milena Baruc](https://github.com/MilenaBaruc) |
