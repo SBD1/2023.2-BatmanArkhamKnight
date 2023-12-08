@@ -1,24 +1,48 @@
 # DER - DIAGRAMA ENTIDADE E RELACIONAMENTO
 
-O Modelo Entidade Relacionamento, mais conhecido como MER, é um modelo conceitual importante para projetar sistemas de banco de dados de maneira eficaz e entender como as entidades (objetos ou conceitos) estão interconectadas. Sendo usado como base para o nosso trabalho sobre o jogo Batman Arkham Knight da 
-disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.  
+O Modelo Entidade Relacionamento, mais conhecido como MER, é um modelo conceitual importante para projetar sistemas de banco de dados de maneira eficaz e entender como as entidades (objetos ou conceitos) estão interconectadas. Sendo usado como base para o nosso trabalho sobre o jogo Batman Arkham Knight da disciplina de Banco de Dados 1, ministrada pelo professor Maurício Serrano.  
 
 ## DER - Batman Arkham Knight
 
-![image](https://github.com/SBD1/2023.2-BatmanArkhamKnight/blob/main/Images/DER_Batman.jpg)
+Abaixo seguem os Diagramas Entidade Relacionamento, com suas respectivas versões:
 
-<font size="3">
-<p style="text-align: center">Imagem 1: Diagrama Entidade Relacionamento Batman Arkham Knight.</p>
-<p style="text-align: center">Fonte: Autores.</p>
-</font>
+<center>
 
-![image](https://github.com/SBD1/2023.2-BatmanArkhamKnight/assets/125216584/5da8de8b-e419-445c-969b-80e91fb3af6d)
-<font size="3">
-<p style="text-align: center">Imagem 2: Segunda versão do Diagrama Entidade Relacionamento Batman Arkham Knight.</p>
-<p style="text-align: center">Fonte: https://github.com/JoosPerro.</p>
-</font>
+**Imagem 1** - Diagrama Entidade Relacionamento Batman Arkham Knight.
+
+![image](../../Images/DER_Batman.jpg)
+
+**Fonte:** Autores.
+
+</center>
+
+<center>
+
+**Imagem 2** - Segunda versão do Diagrama Entidade Relacionamento Batman Arkham Knight..
+
+![image](../../Images/DER_Batman2.jpg)
+
+**Fonte:** Autores.
+
+</center>
 
 ## Entidades
+
+Segue a baixo a descrição de cada entidade.
+
+| **Entidade** | **Descrição** |
+| ------------ | ------------- |
+| Mapa         |               |
+| Região       |               |
+| Local        |               |
+| Quadra       |               |
+| Evidência    |               |
+| Missão       |               |
+| Objetivo
+
+
+
+
 
 ### Gotham
 
