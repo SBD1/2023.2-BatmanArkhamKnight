@@ -98,7 +98,6 @@ LEFT JOIN public.Quadra Q ON L.id = Q.local_id
 LEFT JOIN public.NPC N ON Q.id = N.quadra_id
 GROUP BY L.id
 ORDER BY num_npcs DESC;
-
 ```
 
 ## Histórico de versões
@@ -106,3 +105,4 @@ ORDER BY num_npcs DESC;
 | Versão |    Data    | Descrição                | Autor                                                                                                                 |
 | :----: | :--------: | ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
 | `1.0`  | 29/10/2023 | Criação do documento DQL | [Milena Baruc](https://github.com/MilenaBaruc)                                                                        |
+| `2.0`  | 07/12/2023 | Atualização | [Milena Baruc](https://github.com/MilenaBaruc) |
