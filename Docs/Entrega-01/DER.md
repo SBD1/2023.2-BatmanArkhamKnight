@@ -35,12 +35,12 @@ Segue a baixo a descrição de cada entidade.
 | Mapa         | Localidade onde se encontra tudo o que acontece dentro do jogo. |
 | Região       | Superfície terrestre que apresenta características naturais e específicas. |
 | Local        | Localidade da Região. |
-| Quadra       |               |
-| Personagem   |               |
-| NPC          |               |
-| Inimigo      |               |
+| Quadra       | Específicação dentro de Local, com coordenadas. |
+| Personagem   | Personagens sem ser o PC. |
+| NPC          | Personagem dentro do jogo que não é controlado por um player. |
+| Inimigo      | Personagem que atua como um adversário do protagonista. |
 | Habilidade   |               |
-| Veículo      |               |
+| Veículo      | Um meio de transporte utilizado pelo PC dentro do jogo para se locomover. |
 | PC           |               |
 | Equipamento  |               |
 | Efeito       |               |
