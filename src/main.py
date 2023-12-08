@@ -3,9 +3,10 @@ import os
 
 from typing import Optional
 from service.pc_service import PCService
-from service.quadra_service import QuadraService
+from service.geral_service import GeneralServices
+from repositories.npc_repository import NPCRepository
 from repositories.quadra_repository import QuadraRepository
-from repositories.inimigo_repository import InimigoRepository
+
 
 def clear():
     # os.system('cls')
@@ -19,8 +20,8 @@ class Main:
         self.quadraService = QuadraService()
         self.quadraRepository = QuadraRepository()
         self.service = GeneralServices()
-        self.inimigos = InimigoRepository()
-        self.inventarioService = InventarioService()
+        self.inimigos = NPCRepository()
+
 
         
     def start(self):
