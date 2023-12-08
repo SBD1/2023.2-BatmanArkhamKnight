@@ -38,10 +38,14 @@ Segue a baixo a descrição de cada entidade.
 | Quadra       |               |
 | Evidência    |               |
 | Missão       |               |
-| Objetivo
-
-
-
+| Objetivo     |               |
+| Diálogo      |               |
+| Inimigo      |               |
+| NPC          |               |
+| PC           |               |
+| Veículo      |               |
+| Habilidade   |               |
+| Veic_possui_hab |               |
 
 
 ### Gotham
