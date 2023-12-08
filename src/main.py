@@ -3,8 +3,9 @@ import os
 
 from typing import Optional
 from service.pc_service import PCService
-
-
+from service.quadra_service import QuadraService
+from repositories.quadra_repository import QuadraRepository
+from repositories.inimigo_repository import InimigoRepository
 
 def clear():
     # os.system('cls')
@@ -15,16 +16,22 @@ class Main:
 
     def __init__(self):
         self.PCService = PCService()
-        self.salaService = SalaService()
-        self.salaRepository = SalaRepository()
+        self.quadraService = QuadraService()
+        self.quadraRepository = QuadraRepository()
         self.service = GeneralServices()
         self.inimigos = InimigoRepository()
         self.inventarioService = InventarioService()
 
         
     def start(self):
-
-        print("batman\n")
+        
+        print("BATMAN\n")
+        print( "⠀⠀⠀⠀⣀⣤⣤⣶⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀   ")
+        print( "⣀⣴⣶⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀")
+        print( "⠁⠀⠀⠈⠉⠛⣿⣿⣿⣿⣿⣷⣦⣀⢠⣆⣸⡆⢀⣤⣾⣿⣿⣿⣿⣿⠟⠋⠉⠀⠀⠀⠀")
+        print( "⠀⠀⠀⠀⠀⠀⠸⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠏⠀⠀⠀⠀⠀⠀⠀")
+        print( "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+        print( "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n")
 
         print('Escolha uma das opções abaixo(1-3):\n')
 
@@ -68,7 +75,7 @@ class Main:
             print('Escolha uma das opções abaixo(1/2):\n')
 
             print('1 - Mover de sala\n' +
-                '3 - Sair\n\n\n')
+                '2 - Sair\n\n\n')
 
             print('Digite a opção desejada: \n')
 
