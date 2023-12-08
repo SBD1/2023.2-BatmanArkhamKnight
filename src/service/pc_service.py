@@ -10,7 +10,7 @@ class PCService:
         if descr is None:
             descr = input('Descreva o seu personagem: ')
 
-        newPC = PC(NPC_alvo=None, HP=100, ATK=50, DEF=20, XP=0, furtividade=0, espaco=0, quadra_id=None, veic_id=None, descr=descr)
+        newPC = PC(NPC_alvo=None, HP=100, ATK=50, DEF=20, XP=0, furtividade=0, espaco=0, id_quadra=None, veic_id=None, descr=descr)
 
         self.pcRepository.savePC(newPC)
 

@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS public.Personagem(
 
 CREATE TABLE IF NOT EXISTS public.NPC(
     person_id SERIAL PRIMARY KEY,
-    quadra_id INTEGER REFERENCES public.Quadra (id),
+    id_quadra INTEGER REFERENCES public.Quadra (id),
     veic_id INTEGER REFERENCES public.Veiculo (id),
     nome CHAR(32) NOT NULL,
     HP INTEGER NOT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS public.PC(
     XP INTEGER NOT NULL,
     furtividade INTEGER NOT NULL,
     espaco INTEGER NOT NULL,
-    quadra_id INTEGER REFERENCES public.Quadra (id),
+    id_quadra INTEGER REFERENCES public.Quadra (id),
     veic_id INTEGER REFERENCES public.Veiculo (id),
     descr VARCHAR(514) NOT NULL
 );

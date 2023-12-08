@@ -12,9 +12,9 @@ class NPCRepository:
                 cursor.execute(
                     """SELECT *
                        FROM NPC
-                       WHERE quadra_id = %s;
+                       WHERE id_quadra = %s;
                     """,
-                    [pc.quadra_id])
+                    [pc.id_quadra])
                 result = cursor.fetchone()
 
         if result is not None:

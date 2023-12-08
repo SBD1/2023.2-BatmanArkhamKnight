@@ -240,7 +240,7 @@ BEGIN
         INSERT INTO public.NPC (person_id, nome, HP, ATK, DEF, Descr, NPC_foco)
         VALUES (person_id, 'Nome NPC', 100, 10, 10, 'Descrição NPC', 1);
     ELSIF p_tipo = 2 THEN
-        INSERT INTO public.PC (person_id, NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, quadra_id, veic_id, descr)
+        INSERT INTO public.PC (person_id, NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, id_quadra, veic_id, descr)
         VALUES (person_id, NULL, 100, 10, 10, 0, 5, 2, 1, 1, 'Descrição PC');
     END IF;
 

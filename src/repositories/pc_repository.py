@@ -12,8 +12,8 @@ class PCRepository:
         with self.db.connection as conn:
             with conn.cursor() as cursor:
                 cursor.execute(
-                    "INSERT INTO public.PC(NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, quadra_id, veic_id, descr) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                    [pc.NPC_alvo, pc.HP, pc.ATK, pc.DEF, pc.XP, pc.furtividade, pc.espaco, pc.quadra_id, pc.veic_id, pc.descr]
+                    "INSERT INTO public.PC(NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, id_quadra, veic_id, descr) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                    [pc.NPC_alvo, pc.HP, pc.ATK, pc.DEF, pc.XP, pc.furtividade, pc.espaco, pc.id_quadra, pc.veic_id, pc.descr]
                 )
 
     def updatePC(self, pc: PC) -> None:
@@ -21,8 +21,8 @@ class PCRepository:
         with self.db.connection as conn:
             with conn.cursor() as cursor:
                 cursor.execute(
-                    "UPDATE public.PC SET NPC_alvo = %s, HP = %s, ATK = %s, DEF = %s, XP = %s, furtividade = %s, espaco = %s, quadra_id = %s, veic_id = %s, descr = %s WHERE person_id = %s",
-                    [pc.NPC_alvo, pc.HP, pc.ATK, pc.DEF, pc.XP, pc.furtividade, pc.espaco, pc.quadra_id, pc.veic_id, pc.descr, pc.person_id]
+                    "UPDATE public.PC SET NPC_alvo = %s, HP = %s, ATK = %s, DEF = %s, XP = %s, furtividade = %s, espaco = %s, id_quadra = %s, veic_id = %s, descr = %s WHERE person_id = %s",
+                    [pc.NPC_alvo, pc.HP, pc.ATK, pc.DEF, pc.XP, pc.furtividade, pc.espaco, pc.id_quadra, pc.veic_id, pc.descr, pc.person_id]
                 )
     
     def deletePC(self, person_id) -> None:
@@ -38,7 +38,7 @@ class PCRepository:
         with self.db.connection as conn:
             with conn.cursor() as cursor:
                 cursor.execute(
-                    "SELECT person_id, NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, quadra_id, veic_id, descr FROM public.PC WHERE person_id = %s",
+                    "SELECT person_id, NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, id_quadra, veic_id, descr FROM public.PC WHERE person_id = %s",
                     [person_id]
                 )
                 result = cursor.fetchone()
@@ -55,7 +55,7 @@ class PCRepository:
         with self.db.connection as conn:
             with conn.cursor() as cursor:
                 cursor.execute(
-                    "SELECT person_id, NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, quadra_id, veic_id, descr FROM public.PC" 
+                    "SELECT person_id, NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, id_quadra, veic_id, descr FROM public.PC" 
                     )
                 result = cursor.fetchall()
         

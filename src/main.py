@@ -7,6 +7,7 @@ from service.geral_service import GeneralServices
 from repositories.npc_repository import NPCRepository
 from repositories.quadra_repository import QuadraRepository
 from service.quadra_service import QuadraService
+from model.pc import PC
 
 def clear():
     # os.system('cls')
@@ -84,8 +85,8 @@ class Main:
             
             if inp == '1':
 
-                if self.activePC != None and self.activeInventary != None:
-                    self.activePC = self.salaService.mover(self.activePC)
+                if self.activePC != None:
+                    self.activePC = self.quadraService.mover(self.activePC)
                     self.checkSala(self.activePC)
             
             elif inp == '2':
@@ -115,19 +116,18 @@ class Main:
                 return print("lutei")
             
             elif inp == '2':
-                self.activePC = self.Service.mover(self.activePC)
+                self.activePC = self.quadraService.mover(self.activePC)
                 self.checkSala(self.activePC)    
             
             else:
                 print('\nOpção Inválida!')
 
-    def checkSala(self, activePC: PC = None) -> Optional[PC]:
-        print(self.activeInventary)                
+    def checkSala(self, activePC: PC = None) -> Optional[PC]:               
 
         if self.inimigos.encontrarInimigos(activePC) != None:
             print('Você encontrou um inimigo!')
-            print(self.inimigos.encontrarInimigos(activePC))
-            monstro = self.inimigos.encontrarInimigos(activePC)
+            print(self.inimigos.encontrarNPCs(activePC))
+            monstro = self.inimigos.encontrarNPCs(activePC)
             self.service.lutar(activePC, monstro)
         
 

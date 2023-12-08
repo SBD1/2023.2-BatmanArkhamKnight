@@ -55,13 +55,13 @@ VALUES (1),
        (3);
 
 -- Inserir dados na tabela NPC
-INSERT INTO public.NPC (quadra_id, veic_id, nome, HP, ATK, DEF, Descr, NPC_foco)
+INSERT INTO public.NPC (id_quadra, veic_id, nome, HP, ATK, DEF, Descr, NPC_foco)
 VALUES (4, 4, 'NPC1', 80, 10, 8, 'Descrição NPC1', 1),
        (5, 5, 'NPC2', 100, 12, 10, 'Descrição NPC2', 2),
        (6, 6, 'NPC3', 70, 8, 6, 'Descrição NPC3', 3);
 
 -- Inserir dados na tabela PC
-INSERT INTO public.PC (NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, quadra_id, veic_id, descr)
+INSERT INTO public.PC (NPC_alvo, HP, ATK, DEF, XP, furtividade, espaco, id_quadra, veic_id, descr)
 VALUES (1, 120, 15, 12, 500, 8, 2, 4, 4, 'Descrição PC1'),
        (2, 150, 18, 14, 700, 10, 3, 5, 5, 'Descrição PC2'),
        (3, 170, 23, 16, 1000, 12, 4, 6, 6, 'Descrição PC3');
