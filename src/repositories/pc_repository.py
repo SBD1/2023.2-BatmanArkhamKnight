@@ -21,7 +21,7 @@ class PCRepository:
         with self.db.connection as conn:
             with conn.cursor() as cursor:
                 cursor.execute(
-                    "UPDATE public.PC SET person_id = %d, NPC_alvo = %s, HP = %s, ATK = %s, DEF = %s, XP = %s, furtividade = %s, espaco = %s, id_quadra = %s, veic_id = %s, descr = %s WHERE person_id = %s",
+                    "UPDATE public.PC SET person_id = %s, NPC_alvo = %s, HP = %s, ATK = %s, DEF = %s, XP = %s, furtividade = %s, espaco = %s, id_quadra = %s, veic_id = %s, descr = %s WHERE person_id = %s",
                     [pc.person_id, pc.NPC_alvo, pc.HP, pc.ATK, pc.DEF, pc.XP, pc.furtividade, pc.espaco, pc.id_quadra, pc.veic_id, pc.descr, pc.person_id]
                 )
     
