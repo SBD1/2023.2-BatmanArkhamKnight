@@ -10,11 +10,11 @@ class PCService:
         if descr is None:
             descr = input('Descreva o seu personagem: ')
 
-        newPC = PC(person_id=12, NPC_alvo=None, HP=100, ATK=50, DEF=20, XP=0, furtividade=0, espaco=0, id_quadra=None, veic_id=None, descr=descr)
+        newPC = PC(person_id=1000, NPC_alvo=None, HP=100, ATK=50, DEF=20, XP=0, furtividade=0, espaco=0, id_quadra=None, veic_id=None, descr=descr)
 
         self.pcRepository.savePC(newPC)
 
-        foundPC = self.pcRepository.findPCByDescription(descr)
+        foundPC = self.pcRepository.findPCById(person_id=1000)
 
         return foundPC
 
@@ -38,4 +38,4 @@ class PCService:
             else:
                 return None
         else:
-            return self.pcRepository.findPCByDescription(descr)
+            return self.pcRepository.findPCByID(person_id)
