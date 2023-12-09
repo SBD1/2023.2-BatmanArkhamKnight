@@ -6,15 +6,15 @@ A álgebra relacional é a teoria por trás das consultas SQL. Baseada na teoria
 
 Informações do Personagem Jogável
 ```
-σ(personagem_id = 1) Pc
+σ(personagem_id = 1) PC
 ```
 Missões realizadas pelo Jogador
 ```
- π(m.nome_missao, m.descricao, m.situacao)σ(m.personagem = X)ρ(M)(Missao)
+ π(m.nome, m.descr, m.pontos)σ(m.personagem = 1) Missao
  ```
-Armas do Personagem Jogável
+Listar as armas do Personagem Jogável
 ```
-π(a.nome_equipamento, a.nivel, a.descricao)σ(pe.personagem_id = 1 AND a.tipo_equipamento = 'Arma')[σ(a.equip_id = pe.equip_id)(ρ(pe)Pcequip X ρ(a)Equipamento)]
+π(a.nome, a.descr, a.preco)σ(p.personagem_id = 1)[σ(a.equip_id = a.PC_id) PC_equipa] Equipamento
 ```
 Veículos do Personagem Jogável
 ```

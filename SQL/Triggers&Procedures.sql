@@ -159,6 +159,11 @@ CREATE TRIGGER trigger_evita_duplicacao_mapa
 BEFORE INSERT OR UPDATE ON public.Mapa
 FOR EACH ROW EXECUTE FUNCTION evita_duplicacao_mapa();
 
+-- Trigger para atualizar status da missão 
+CREATE OR REPLACE FUNCTION att_missao(
+    
+)
+
 -- Trigger para evitar duplicações no nome da Regiao em um Mapa específico
 CREATE OR REPLACE FUNCTION evita_duplicacao_regiao()
 RETURNS TRIGGER AS $$
