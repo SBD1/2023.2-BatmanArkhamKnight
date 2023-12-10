@@ -13,7 +13,7 @@ class QuadraRepository:
         with self.db.connection as conn:
             with conn.cursor() as cursor:
                 cursor.execute(
-                    "SELECT id_quadra, nome FROM public.Quadra WHERE id_quadra = %s",
+                    "SELECT id_quadra FROM public.Quadra WHERE id_quadra = %s",
                     [pc.id_quadra]
                         )
                 result = cursor.fetchone()
