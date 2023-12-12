@@ -32,6 +32,8 @@ Nossa equipe de trabalho é composta pelos estudantes de Engenharia de Software 
     - [Apresentação Entrega 2](https://www.youtube.com/watch?v=GA20XzFjjZY)
 - [Entrega 3](https://github.com/SBD1/2023.2-BatmanArkhamKnight/tree/main/Docs/Entrega-03)
     - [Apresentação Entrega 3](https://youtu.be/afw2gLBWiH0)
+- [ Entrega Final ](https://github.com/SBD1/2023.2-BatmanArkhamKnight/tree/main/src)
+
 ### Histórico de versões
 
 | Versão |    Data    | Descrição                                      | Autor                                               | Revisão                                             |
@@ -40,3 +42,4 @@ Nossa equipe de trabalho é composta pelos estudantes de Engenharia de Software 
 | `1.1`  | 02/10/2023 | Adicionando apresentação 1 | [Milena Baruc](https://github.com/MilenaBaruc)  | [Luis Miranda](https://github.com/LuisMiranda10) |
 | `1.2`  | 30/10/2023 | Adicionando apresentação 2 | [Mateus Orlando](https://github.com/MateusPy)  | [Milena Baruc](https://github.com/MilenaBaruc) |
 | `1.3`  | 04/12/2023 | Adicionando apresentação 3 |  [Mateus Orlando](https://github.com/MateusPy)  | [Luis Miranda](https://github.com/LuisMiranda10)  |
+| `1.4`  | 11/12/2023 | Adicionando apresentação 4 |  [Mateus Orlando](https://github.com/MateusPy)  | --  |

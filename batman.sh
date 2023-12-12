@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 src/config/main.py
+python3 Jogo/config/main.py
